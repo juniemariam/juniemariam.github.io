@@ -3,15 +3,21 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Junie Mariam Varghese - Portfolio</title>
-  <link rel="icon" href="assets/img/favicon.png">
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - iPortfolio Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-  <!-- Google Fonts -->
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -22,19 +28,42 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    /* Style for the audio player */
+    .audio-player {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .audio-icon {
+      font-size: 40px;
+      color: #007bff;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .audio-icon:hover {
+      color: #0056b3;
+    }
+  </style>
+
 </head>
 
 <body class="index-page">
 
-  <!-- Header -->
   <header id="header" class="header dark-background d-flex flex-column">
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
     <div class="profile-img">
-      <img src="assets/img/my-profile-img.jpg" alt="Profile" class="img-fluid rounded-circle">
+      <img src="assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
     </div>
 
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
       <h1 class="sitename">Junie Mariam Varghese</h1>
     </a>
 
@@ -42,108 +71,863 @@
       <a href="https://x.com/JunieVarghese" class="twitter"><i class="bi bi-twitter-x"></i></a>
       <a href="https://github.com/juniemariam" class="github"><i class="bi bi-github"></i></a>
       <a href="https://www.linkedin.com/in/junie-mariam-varghese/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+
     </div>
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#home" class="active"><i class="bi bi-house"></i> Home</a></li>
-        <li><a href="#about"><i class="bi bi-person"></i> About</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text"></i> Resume</a></li>
-        <li><a href="#projects"><i class="bi bi-images"></i> Projects</a></li>
-        <li><a href="#professionalAffliations"><i class="bi bi-hdd-stack"></i> Affiliations</a></li>
-        <li><a href="#CertificatesAndRecognitions"><i class="bi bi-award"></i> Certificates</a></li>
-        <li><a href="#contact"><i class="bi bi-envelope"></i> Contact</a></li>
+        <li><a href="#home" class="active"><i class="bi bi-house navicon"></i> Home</a></li>
+        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="#projects"><i class="bi bi-images navicon"></i> Projects</a></li>
+        <li><a href="#professionalAffliations"><i class="bi bi-hdd-stack navicon"></i> Professional Affiliations</a></li>
+        <li><a href="#CertificatesAndRecognitions"><i class="bx bx-award"></i>  Certificates & Recognitions </a></li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
+
   </header>
 
-  <!-- Main -->
   <main class="main">
-    <section id="home" class="hero section dark-background">
-      <div class="container text-center" data-aos="fade-up">
-        <h1 class="mt-5"><strong>Junie Mariam Varghese</strong></h1>
-        <p>I'm <span class="typed" data-typed-items="Graduate Student, Developer, AI Enthusiast">a Developer</span></p>
-      </div>
-    </section>
 
-    <section id="about" class="about section light-background">
-      <div class="container" data-aos="fade-up">
-        <h2 class="section-title">About</h2>
-        <p class="text-justify">
-          Hi, I’m Junie! 👋 I’m a Software Engineer with a passion for solving real-world problems through technology.
+    <!-- Home Section -->
+    <section id="home" class="hero section dark-background">
+
+<!--       <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="">
+ -->
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h1><strong>Junie Mariam Varghese</strong></h1>
+        <p>I'm <span class="typed" data-typed-items="Graduate Student, Developer, AI Enthusiast"></span><span
+            class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span
+            class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p style="text-align: justify;">Hi, I’m Junie! 👋
+          I’m a Software Engineer with a passion for solving real-world problems through technology.
           I’m currently pursuing my master’s in Software Engineering at San Jose State University, specializing in Mobile and Cloud Computing.
           My background also includes a master’s in Artificial Intelligence and Machine Learning, which has fueled my excitement for innovation and creative tech solutions.
-        </p>
-      </div>
-    </section>
+          With experience working at Philips Healthcare, I’ve been part of projects that make a real impact—and this is where my love for technology truly deepened.
+          I thrive on challenges, love learning new technologies, and am always looking for ways to make a difference through my work.
+          I’m currently on the lookout for exciting opportunities in<b>  Software Engineering, Full Stack Development, Cloud and Machine Learning, especially summer 2025 and fall 2025 internships</b>, where I can bring my skills and passion for tech to a forward-thinking team. Let’s build something great together! 🤝✨</p>
+          
+        </div><!-- End Section Title -->
 
-    <section id="resume" class="resume section">
-      <div class="container" data-aos="fade-up">
-        <h2 class="section-title">Resume</h2>
-        <p class="text-justify">Please find my full resume on LinkedIn or reach out via email to request a PDF copy.</p>
-      </div>
-    </section>
+    </section><!-- /About Section -->
 
-    <section id="projects" class="projects section light-background">
-      <div class="container" data-aos="fade-up">
-        <h2 class="section-title">Projects</h2>
-        <div class="row">
-          <!-- Sample Project -->
-          <div class="col-lg-4 col-md-6">
-            <div class="card h-100">
-              <img src="assets/img/portfolio/ecommerce.jpg" class="card-img-top" alt="Ecommerce Website">
-              <div class="card-body">
-                <h5 class="card-title">Ecommerce Website</h5>
-                <p class="card-text">Built with Django and AWS RDS PostgreSQL</p>
-                <a href="https://github.com/juniemariam/ECommerceWebApp" target="_blank" class="btn btn-primary">View on GitHub</a>
-              </div>
+    <!-- Skills Section -->
+<section id="skills" class="skills section light-background">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+
+  <div class="container">
+    
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Skills</h2>
+    </div>
+
+    <div class="row skills-content">
+      <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
+        <h3 style="color:#149ddd;"><strong>Programming Languages</strong></h3>
+        <br>
+        <div class="row no-gutters==">
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+            <div class="count-box" style="text-align: center; display: inline-block;">
+              <i class="bx bxl-python bx-lg"></i>
+
+              <p><strong>Python</strong> </p>
             </div>
           </div>
-          <!-- End Sample Project -->
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+            <div class="count-box" style="text-align: center; display: inline-block;">
+              <i class="bx bxl-c-plus-plus bx-lg"></i>
+
+              <p><strong style="align-content: center;display: block;">C++</strong> </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+            <div class="count-box" style="text-align: center; display: inline-block;">
+              <i class="bx bxl-javascript bx-lg"></i>
+
+              <p><strong style="align-content: center;display: block;">JS</strong> </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+            <div class="count-box" style="text-align: center; display: inline-block;">
+              <img src="assets/img/r-project.svg"
+                style="height: 3rem; width: 3rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+              <p><strong style="align-content: center;display: block;">R</strong> </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+            <div class="count-box" style="text-align: center; display: inline-block;">
+              <i class="bx bxl-typescript bx-lg"></i>
+
+              <p><strong style="align-content: center;display: block;">TS</strong> </p>
+            </div>
+          </div>
+
+<!--           <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+            <div class="count-box" style="text-align: center; display: inline-block;">
+              <i class="bx bxl-go-lang bx-lg"></i>
+
+              <p><strong style="align-content: center;display: block;">GO</strong> </p>
+            </div>
+          </div> -->
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+            <div class="count-box" style="text-align: center; display: inline-block;">
+              <img src="assets/img/sql.png"
+                style="height: 2.5rem; width: 2.5rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+              <p><strong style="align-content: center;display: block;">SQL</strong> </p>
+            </div>
+          </div>
+
         </div>
       </div>
-    </section>
 
+      <div class="row skills-content">
+        <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
+        </br>
+          <h3 style="color:#149ddd;"><Strong>Web Technologies</Strong></h3>
+          <br>
+          <div class="row no-gutters">
+
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+              <div class="count-box">
+                <i class="bx bxl-angular bx-lg"></i>
+
+                <p><strong>Angular</strong> </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+              <div class="count-box">
+                <i class="bx bxl-react bx-lg"></i>
+
+                <p><strong>ReactJS</strong> </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+              <div class="count-box">
+                <i class="bx bxl-nodejs bx-lg"></i>
+
+                <p><strong>Node.js</strong> </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+              <div class="count-box">
+                <img src="https://www.djangoproject.com/m/img/logos/django-logo-negative.svg" alt="Django Logo" style="height: 3rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+
+                <p><strong>Django</strong> </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="row skills-content">
+        <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
+        </br>
+          <h3 style="color:#149ddd;"><strong>Frameworks</strong></h3>
+          <br>
+          <div class="row no-gutters">
+
+            <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+              <div class="count-box" style="text-align: center; display: inline-block;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Hadoop_logo.svg"
+                  style="height: 3rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+                <p><strong style="align-content: center;display: block;">Hadoop</strong> </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+              <div class="count-box" style="text-align: center; display: inline-block;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg"
+                  alt="Apache Spark"
+                  style="height: 3.5rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+                <p><strong style="align-content: center;display: block;">Spark</strong> </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+              <div class="count-box" style="text-align: center; display: inline-block;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png"
+                  style="height: 2rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 2;">
+
+                <p><strong style="align-content: center;display: block;">Pytorch</strong> </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+              <div class="count-box" style="text-align: center; display: inline-block;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Keras_logo.svg"
+                  style="height: 3.5rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+                <p><strong style="align-content: center;display: block;">Keras</strong> </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+              <div class="count-box" style="text-align: center; display: inline-block;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg"
+                  style="height: 3.5rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+                <p><strong style="align-content: center;display: block;">Tensorflow</strong> </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+              <div class="count-box" style="text-align: center; display: inline-block;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
+                  style="height: 3.5rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+                <p><strong style="align-content: center;display: block;">Sklearn</strong> </p>
+              </div>
+            </div>
+
+
+
+
+          </div>
+        </div>
+        <div class="row skills-content">
+
+          <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
+          </br>
+            <h3 style="color:#149ddd;"><strong>Cloud</strong></h3>
+            <br>
+            <div class="row no-gutters">
+
+              <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
+                data-aos="fade-up">
+                <div class="count-box">
+                  <center>
+                    <i class="bx bxl-aws bx-lg"></i>
+
+
+                    <p><strong>Amazon Web Services</strong> </p>
+                  </center>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
+                data-aos="fade-up">
+                <div class="count-box">
+                  <center><i class="bx bxl-google-cloud bx-lg"></i></center>
+
+
+                  <p><strong>Google Cloud</strong> </p>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+        <div class="row skills-content">
+          <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
+          </br>
+            <h3 style="color:#149ddd;"><strong>Databases</strong></h3>
+            <br>
+            <div class="row no-gutters">
+
+              <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
+                data-aos="fade-up">
+                <div class="count-box" style="text-align: center; display: inline-block;">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/MySQL_textlogo.svg"
+                    style="height: 3rem; width: 6rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+                  <p><strong style="align-content: center;display: block;">MySQL</strong> </p>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
+                data-aos="fade-up">
+                <div class="count-box" style="text-align: center; display: inline-block;">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg"
+                    style="height: 3rem; width: 6rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+                  <p><strong style="align-content: center;display: block;">MongoDB</strong> </p>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
+                data-aos="fade-up">
+                <div class="count-box" style="text-align: center; display: inline-block;">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg"
+                    style="height: 3rem; width: 6rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+                  <p><strong style="align-content: center;display: block;">PostgreSQL</strong> </p>
+                </div>
+              </div>
+
+
+
+
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
+            </br>
+              <h3 style="color:#149ddd;"><strong>Tools</strong></h3>
+              <br>
+              <div class="row no-gutters">
+
+                <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
+                  data-aos="fade-up">
+                  <div class="count-box">
+                    <i class="bx bxl-docker bx-lg"></i>
+
+                    <p><strong>Docker</strong> </p>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
+                  data-aos="fade-up">
+                  <div class="count-box">
+                    <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins Logo" width="40" />
+                    <center>
+                      <p><strong>Jenkins</strong> </p>
+                    </center>
+
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
+                  data-aos="fade-up">
+                  <div class="count-box">
+                    <i class="bx bxl-git bx-lg"></i>
+                    <center>
+                      <p><strong>Git</strong> </p>
+                    </center>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+
+</section><!-- /Skills Section -->
+
+
+
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p></p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Summary</h3>
+
+            <div class="resume-item pb-0">
+              <p style="text-align: justify"><em>Dedicated Software Engineer with 3 years of experience in Artificial Intelligence, Software Development, and Cloud Computing, focused on crafting solutions that truly benefit users and enhance system security. Currently pursuing a Master’s in Software Engineering, eager to expand my skills and contribute as a Software Engineering or Machine Learning Intern.
+              </em></p>
+            </div><!-- Edn Resume Item -->
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+
+              <h4><b>Master of Science: Software Engineering with Specilazation in Cloud and Mobile Computing</b></h4>
+              <h4>San Jose State University, CA</h4>
+              <p>2024 - May 2026(Expected Graduation)</p>
+              <p style="text-align: justify">Relevant Coursework: Cloud Technologies, Virtualization Technologies, Enterprise Software Platforms.</p>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4><b>Master of Technology:Computer Science and Engineering with Specialization in Artificial Intelligence and Machine Learning</b></h4>
+              <h4>Vellore Institute of Technology, India</h4>
+              <p>2019 - 2021</p>
+              <p style="text-align: justify">Relevant Coursework: Artificial Intelligence, Deep Learning, Natural Language Processing, Big Data Analytics.</p>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4><b>Introduction to Cybersecurity</b></h4>
+              <h4>CodePath, Remote</h4>
+              <p>2024</p>
+              
+              <p style="text-align: justify">Relevant Coursework: Access Control, Networking, Malware, Data and Social Engineering, Privacy.</p>
+            </div><!-- Edn Resume Item -->
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4><b>Research Assistant</b></h4>
+              <h4>San Jose State University - San Jose,CA</h4>
+              <p style="text-align:right-align">2020-2021</p>
+              
+              <ul>
+                <li style="text-align: justify">Applied deep learning techniques to high-dimensional DNA sequence data using TensorFlow and Python, improving genomic pattern recognition accuracy.
+                </li>
+                <li style="text-align: justify">Preprocessed and analyzed large genomic datasets with bioinformatics tools, enhancing data quality and enabling deeper biological insights for research.
+                  </li>
+              </ul>
+            </div>
+
+            
+            <div class="resume-item">
+              <h4><b>Software Engineer</b></h4>
+              <h4>Philips - Bangalore,India</h4>
+              <p style="text-align:right-align">2021-2023</p>
+              
+              <ul>
+                <li style="text-align: justify"><b>Strengthening Security and Scalability:</b> Contributed to the migration of HTTP authentication systems to OAuth, which reduced security vulnerabilities and decreased reported incidents by 30%. Helped optimize cloud deployments with automated Python scripts, leading to a 15% improvement in provisioning time for AWS resources.</li>
+                <li style="text-align: justify"><b>Improving User Experience:</b> Played a key role in designing features such as undo/redo functionality, panel resizing, and localization, which enhanced user interaction flexibility by 40% and contributed to a 25% increase in user retention.</li>
+                <li style="text-align: justify"><b>Ensuring Quality and Reliability:</b> Supported high code quality by achieving over 90% test coverage using Jasmine for unit tests. Developed Playwright test cases within Cucumber scenarios to validate end-to-end workflows across diverse environments.</li>
+                <li style="text-align: justify"><b>Facilitating Smooth Deployments:</b> Assisted in implementing blue-green deployment strategies to minimize downtime during updates and address scalability challenges with dynamic resource adjustments based on workload demands.</li>
+                <li style="text-align: justify"><b>Technical Support and Leadership:</b> Helped ensure a smooth transition to Visual Studio 2022 with less than 2 hours of downtime, working closely with cross-functional teams to meet deadlines. Participated in platform roadshows and delivered techtalks, receiving positive feedback from peers and stakeholders.</li>
+                <li style="text-align: justify"><b>Effective Communication and Collaboration: </b> Demonstrated strong communication skills and a collaborative approach by facilitating platform roadshows and delivering a well-received tech talk, effectively showcasing technical knowledge to diverse audiences.</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4><b>AI Research Intern</b></h4>
+              <h4>Philips - Bangalore,India</h4>
+              <p style="text-align:right-align">2020-2021</p>
+              
+              <ul>
+                <li style="text-align: justify"><b>Developing an Intelligent Video Summarizer:</b> Helped reduce diagnostic review time by 40% by building a video summarizer agent. Used a CNN-based encoder-decoder for visual features, a BiLSTM for sequence modeling, and reinforcement learning for selecting frames based on user preferences, implemented in PyTorch.
+                </li>
+                <li style="text-align: justify"><b>Improving Image Quality Metrics:</b> Worked on fine-tuning Non-Reference Image Quality Metrics by using a Siamese Network to transfer knowledge to a traditional CNN, enabling better estimation of image quality from individual images.</li>
+                <li style="text-align: justify"><b>Researching Ultrasound Imaging</b> Explored the use of temporal data in ultrasound imaging, resulting in a spotlight paper at an internal conference. Proposed a new approach to integrating temporal data, showing promise for improving imaging techniques.</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Projects</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <!-- <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">App</li>
+            <li data-filter=".filter-product">Product</li>
+            <li data-filter=".filter-branding">Branding</li>
+            <li data-filter=".filter-books">Books</li>
+          </ul>End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/ecommerce.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="https://github.com/juniemariam/ECommerceWebApp" target="_blank" class="portfolio-title">
+                    <h4>Ecommerce Website</h4>
+                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
+                  </a>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">Python</span>
+                    <span class="tech-tile">Django</span>
+                    <span class="tech-tile">AWS</span>
+                    <span class="tech-tile">RDS PostgreSQL</span>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/car.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
+
+                  <a href="https://github.com/juniemariam/Recarnation-TechTitans" target="_blank" class="portfolio-title">
+                    <h4>Recarnation</h4>
+                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
+                  </a>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">Python</span>
+                    <span class="tech-tile">Django</span>
+                    <span class="tech-tile">JavaScript</span>
+                    <span class="tech-tile">PostgreSQL</span>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/shopping.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <!-- <a href="https://github.com/juniemariam/ShoppingSpree" target="_blank" class="portfolio-title">
+                    <h4>Shopping Spree</h4>
+                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
+                  <!-- </a> --> 
+                  <a href="https://github.com/juniemariam/ShoppingSpree" target="_blank" class="portfolio-title">
+                    <h4>Shopping Spree</h4>
+                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
+                  </a>
+                  <a href="https://www.ijeat.org/wp-content/uploads/papers/v8i6/F8120088619.pdf" target="_blank" class="portfolio-title">
+                    <i class="bi bi-journal-text"></i> <!-- Publication Icon -->
+                  </a>
+                  
+                  <div class="tech-tiles">
+                    <span class="tech-tile">ReactJS</span>
+                    <span class="tech-tile">Node.js</span>
+                    <span class="tech-tile">Firebase</span>
+                    <span class="tech-tile">ML</span>
+                    <span class="tech-tile">Heroku</span>
+                  </div>
+            
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/tweetclone.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  
+                  <a href="https://github.com/juniemariam/TwitterClone" target="_blank" class="portfolio-title">
+                    <h4>Twitter Clone</h4>
+                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
+                  </a>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">Python</span>
+                    <span class="tech-tile">Twitter API</span>
+                    <span class="tech-tile">SQLite3</span>
+                  </div>
+        
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/demensia.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+
+
+                  <a href="https://github.com/juniemariam/DementiaDetection" target="_blank" class="portfolio-title">
+                    <h4>Dementia Detection</h4>
+                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
+                  </a>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">Python</span>
+                    <span class="tech-tile">Scikit-Learn</span>
+                    <span class="tech-tile">Pandas</span>
+                    <span class="tech-tile">Numpy</span>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/aws.png" class="img-fluid" alt="">
+                <div class="portfolio-info">                  
+                  <a href="https://github.com/juniemariam/Aws-Certified-Solutions-Architect" target="_blank" class="portfolio-title">
+                    <h4>AWS Solutions Architect Prep</h4>
+                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
+                  </a>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">AWS</span>
+                    <span class="tech-tile">Terraform</span>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+            
+
+          
+          </div><!-- End Portfolio Container -->
+          <div style="text-align: center; margin-top: 30px;">
+            <h2>View More Projects</h2>
+            <a href="https://github.com/juniemariam" target="_blank" style="text-decoration: none; color: #007bff; font-size: 18px;">
+              Check out my GitHub <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Certification Section -->
     <section id="professionalAffliations" class="certificate section">
-      <div class="container" data-aos="fade-up">
-        <h2 class="section-title">Professional Affiliations</h2>
-        <ul>
-          <li>CodePath</li>
-          <li>Society of Women Engineers</li>
-          <li>Rewriting the Code</li>
-        </ul>
-      </div>
-    </section>
 
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>PROFESSIONAL AFFILIATIONS</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <img src="assets/img/codepath.jpg" alt="CodePath Logo" class="img-fluid" style="width: 100px; height: auto; margin-bottom: 10px;">
+              <h4 class="title">CodePath</h4>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div>
+              <img src="assets/img/swe.png" alt="SWE Logo" class="img-fluid" style="width: 100px; height: auto; margin-bottom: 10px;">
+              <h4 class="title">Society of Women Engineers</h4>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div>
+              <img src="assets/img/RTC.jpg" alt="RTC Logo" class="img-fluid" style="width: 100px; height: auto; margin-bottom: 10px;">
+              <h4 class="title">Rewriting the Code</h4>
+            </div>
+          </div><!-- End Service Item -->
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Testimonials Section -->
     <section id="CertificatesAndRecognitions" class="testimonials section light-background">
-      <div class="container" data-aos="fade-up">
-        <h2 class="section-title">Certificates and Recognitions</h2>
-        <ul>
-          <li>DevOps Essentials - Google</li>
-          <li>AI for Medical Diagnosis - DeepLearning.AI</li>
-          <li>Fundamentals of Deep Learning for Computer Vision - Nvidia</li>
-        </ul>
-      </div>
-    </section>
 
-    <section id="contact" class="contact section">
-      <div class="container" data-aos="fade-up">
-        <h2 class="section-title">Contact</h2>
-        <p>Email: <a href="mailto:juniemariyam@gmail.com">juniemariyam@gmail.com</a></p>
-        <p>Location: San Jose, California, United States 95126</p>
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Certificates and Recognitions</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 1
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <span>DevOps Essentials</span> 
+                </p>
+                <img src="assets/img/testimonials/google.jpg" class="testimonial-img" alt="">
+                <h3>Google</h3>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <span>Fundamentals of Deep Learning for Computer Vision</span>
+                </p>
+                <img src="assets/img/testimonials/Nvidia.jpg" class="testimonial-img" alt="">
+                <h3>Nvidia</h3>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <span>Introduction to Data Science and Methodologies</span>
+                </p>
+                <img src="assets/img/testimonials/ibm.png" class="testimonial-img" alt="">
+                <h3>IBM</h3>
+                
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <span>AI From the Data Center to the Edge – An Optimized Path Using Intel® Architecture</span>
+                </p>
+                <img src="assets/img/testimonials/intel.png" class="testimonial-img" alt="">
+                <h3>Intel</h3>
+                
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <span>Introduction to Embedded Machine Learning</span>
+                </p>
+                <img src="assets/img/testimonials/edgeimpulse.png" class="testimonial-img" alt="">
+                <h3>Edge Impulse</h3>
+                
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <span>AI for Medical Diagnosis</span>
+                </p>
+                <img src="assets/img/testimonials/dl.png" class="testimonial-img" alt="">
+                <h3>DeepLearning.AI</h3>
+                
+              </div>
+            </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p>
+                <span>Fundamentals of Reinforcement Learning</span>
+              </p>
+              <img src="assets/img/testimonials/univ.png" class="testimonial-img" alt="">
+              <h3>University Of Alberta</h3>
+              
+            </div>
+          </div><!-- End testimonial item -->
+          
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p>
+                <span>Spot Award for taking ownership VS2022 migration at train level</span>
+              </p>
+              <img src="assets/img/testimonials/philips.jpeg" class="testimonial-img" alt="">
+              <h3>Philips</h3>
+              
+            </div>
+          </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
       </div>
-    </section>
+
+    </section><!-- /Testimonials Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-5">
+
+            <div class="info-wrap">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Address</h3>
+                  <p>San Jose, California, United States 95126</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email</h3>
+                  <p>junie.mariamvarghese@sjsu.edu</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
+                frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <iframe src="https://forms.gle/U66ipXKRw2wi1Ad29" width="800" height="900"></iframe>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
   </main>
 
-  <!-- Footer -->
-  <footer class="text-center p-3">
-    <p>&copy; 2025 Junie Mariam Varghese. All rights reserved.</p>
-  </footer>
+
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
-    <i class="bi bi-arrow-up-short"></i>
-  </a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -162,6 +946,9 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
 </body>
 
 </html>
+
+
