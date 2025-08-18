@@ -2,422 +2,899 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Junie Mariam Varghese — Portfolio</title>
-  <meta name="description" content="Portfolio of Junie Mariam Varghese — software engineer focusing on cloud, AI/ML, and full‑stack projects." />
-  <meta name="keywords" content="Junie Mariam Varghese, software engineer, cloud, AI, ML, portfolio" />
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - iPortfolio Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon" />
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect" />
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <!-- Icon libraries (moved to <head> so icons work site‑wide) -->
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet" />
-
+  <link href="assets/css/main.css" rel="stylesheet">
   <style>
-    /* Small cleanups */
-    .tech-tiles { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .5rem; }
-    .tech-tile { font-size: .8rem; border: 1px solid #e1e8f0; padding: .25rem .5rem; border-radius: .5rem; }
-    .portfolio-title { color: inherit; text-decoration: none; display: inline-flex; align-items: center; gap: .35rem; }
-    .logo .sitename { font-size: 1.35rem; }
+    /* Style for the audio player */
+    .audio-player {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .audio-icon {
+      font-size: 40px;
+      color: #007bff;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .audio-icon:hover {
+      color: #0056b3;
+    }
   </style>
+
 </head>
 
 <body class="index-page">
+
   <header id="header" class="header dark-background d-flex flex-column">
-    <button class="header-toggle d-xl-none bi bi-list" aria-label="Toggle navigation"></button>
+    <i class="header-toggle d-xl-none bi bi-list"></i>
 
     <div class="profile-img">
-      <img src="assets/img/my-profile-img.jpg" alt="Photo of Junie Mariam Varghese" class="img-fluid rounded-circle" />
+      <img src="assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
     </div>
 
-    <a href="#home" class="logo d-flex align-items-center justify-content-center" aria-label="Home">
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
       <h1 class="sitename">Junie Mariam Varghese</h1>
     </a>
 
-    <div class="social-links text-center" aria-label="Social links">
-      <a href="https://x.com/JunieVarghese" target="_blank" rel="noopener noreferrer" class="twitter" aria-label="X profile"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://github.com/juniemariam" target="_blank" rel="noopener noreferrer" class="github" aria-label="GitHub profile"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/junie-mariam-varghese/" target="_blank" rel="noopener noreferrer" class="linkedin" aria-label="LinkedIn profile"><i class="bi bi-linkedin"></i></a>
+    <div class="social-links text-center">
+      <a href="https://x.com/JunieVarghese" class="twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://github.com/juniemariam" class="github"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/junie-mariam-varghese/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+
     </div>
 
-    <nav id="navmenu" class="navmenu" aria-label="Primary">
+    <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#home" class="active"><i class="bi bi-house navicon" aria-hidden="true"></i> Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon" aria-hidden="true"></i> About</a></li>
-        <li><a href="#projects"><i class="bi bi-images navicon" aria-hidden="true"></i> Projects</a></li>
-        <li><a href="#professionalAffiliations"><i class="bi bi-hdd-stack navicon" aria-hidden="true"></i> Professional Affiliations</a></li>
-        <li><a href="#certs"><i class='bx bx-award' aria-hidden="true"></i> Certificates & Recognitions</a></li>
-        <li><a href="#links"><i class="bi bi-link-45deg navicon" aria-hidden="true"></i> Links</a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon" aria-hidden="true"></i> Contact</a></li>
+        <li><a href="#home" class="active"><i class="bi bi-house navicon"></i> Home</a></li>
+        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+<!--         <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="#projects"><i class="bi bi-images navicon"></i> Projects</a></li> -->
+        <li><a href="#professionalAffliations"><i class="bi bi-hdd-stack navicon"></i> Professional Affiliations</a></li>
+        <li><a href="#CertificatesAndRecognitions"><i class="bx bx-award"></i>  Certificates & Recognitions </a></li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
+
   </header>
 
   <main class="main">
+
     <!-- Home Section -->
     <section id="home" class="hero section dark-background">
-      <img src="assets/img/hero-bg.jpg" alt="Background" data-aos="fade-in" />
+
+      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="">
+
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h1><strong>Junie Mariam Varghese</strong></h1>
-        <p>I'm <span class="typed" data-typed-items="Graduate Student, Cloud & Software Engineer, AI Enthusiast"></span></p>
+        <p>I'm <span class="typed" data-typed-items="Graduate Student, Cloud - Software Engineer, AI Enthusiast"></span><span
+            class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span
+            class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
       </div>
-    </section>
+
+    </section><!-- /Hero Section -->
 
     <!-- About Section -->
     <section id="about" class="about section">
+
+      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>About</h2>
-        <p style="text-align: justify;">Hi, I’m Junie! 👋 I’m a Software Engineer with a passion for solving real-world problems through technology. I’m currently pursuing my master’s in Software Engineering at San Jose State University, specializing in Mobile and Cloud Computing. My background also includes a master’s in Artificial Intelligence and Machine Learning, which has fueled my excitement for innovation and creative tech solutions. With experience working at Philips Healthcare, I’ve been part of projects that make a real impact—and this is where my love for technology truly deepened. I thrive on challenges, love learning new technologies, and am always looking for ways to make a difference through my work. I’m currently on the lookout for exciting opportunities in <b>Software Engineering, Full Stack Development, Cloud and Machine Learning (Summer/Fall 2025 internships)</b>. Let’s build something great together! 🤝✨</p>
-      </div>
-    </section>
+        <p style="text-align: justify;">Hi, I’m Junie! 👋
+          I’m a Software Engineer with a passion for solving real-world problems through technology.
+          I’m currently pursuing my master’s in Software Engineering at San Jose State University, specializing in Mobile and Cloud Computing.
+          My background also includes a master’s in Artificial Intelligence and Machine Learning, which has fueled my excitement for innovation and creative tech solutions.
+          With experience working at Philips Healthcare, I’ve been part of projects that make a real impact—and this is where my love for technology truly deepened.
+          I thrive on challenges, love learning new technologies, and am always looking for ways to make a difference through my work.
+          I’m currently on the lookout for exciting opportunities in<b>  Software Engineering, Full Stack Development, Cloud and Machine Learning, especially summer 2025 and fall 2025 internships</b>, where I can bring my skills and passion for tech to a forward-thinking team. Let’s build something great together! 🤝✨</p>
 
-    <!-- Skills Section (unchanged structure; icon CSS now works globally) -->
-    <section id="skills" class="skills section light-background">
-      <div class="container">
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Skills</h2>
+        </div><!-- End Section Title -->
+
+    </section><!-- /About Section -->
+
+    <!-- Skills Section -->
+<section id="skills" class="skills section light-background">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+
+  <div class="container">
+
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Skills</h2>
+    </div>
+
+    <div class="row skills-content">
+      <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
+        <h3 style="color:#149ddd;"><strong>Programming Languages</strong></h3>
+        <br>
+        <div class="row g-3">
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+            <div class="count-box" style="text-align: center; display: inline-block;">
+              <i class="bx bxl-python bx-lg"></i>
+
+              <p><strong>Python</strong> </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+            <div class="count-box" style="text-align: center; display: inline-block;">
+              <i class="bx bxl-c-plus-plus bx-lg"></i>
+
+              <p><strong style="align-content: center;display: block;">C++</strong> </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+            <div class="count-box" style="text-align: center; display: inline-block;">
+              <i class="bx bxl-javascript bx-lg"></i>
+
+              <p><strong style="align-content: center;display: block;">JS</strong> </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+            <div class="count-box" style="text-align: center; display: inline-block;">
+              <img src="assets/img/r-project.svg"
+                style="height: 3rem; width: 3rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+              <p><strong style="align-content: center;display: block;">R</strong> </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+            <div class="count-box" style="text-align: center; display: inline-block;">
+              <i class="bx bxl-typescript bx-lg"></i>
+
+              <p><strong style="align-content: center;display: block;">TS</strong> </p>
+            </div>
+          </div>
+
+<!--           <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+            <div class="count-box" style="text-align: center; display: inline-block;">
+              <i class="bx bxl-go-lang bx-lg"></i>
+
+              <p><strong style="align-content: center;display: block;">GO</strong> </p>
+            </div>
+          </div> -->
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+            <div class="count-box" style="text-align: center; display: inline-block;">
+              <img src="assets/img/sql.png"
+                style="height: 2.5rem; width: 2.5rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+              <p><strong style="align-content: center;display: block;">SQL</strong> </p>
+            </div>
+          </div>
+
         </div>
-        <!-- ORIGINAL skills markup preserved from your file for brevity -->
-        <!-- TODO: Keep your existing skills blocks here as-is -->
       </div>
-    </section>
 
-    <!-- \*\* RESUME SECTION REMOVED \*\* -->
+      <div class="row skills-content">
+        <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
+        </br>
+          <h3 style="color:#149ddd;"><Strong>Web Technologies</Strong></h3>
+          <br>
+          <div class="row no-gutters">
+
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+              <div class="count-box">
+                <i class="bx bxl-angular bx-lg"></i>
+
+                <p><strong>Angular</strong> </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+              <div class="count-box">
+                <i class="bx bxl-react bx-lg"></i>
+
+                <p><strong>ReactJS</strong> </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+              <div class="count-box">
+                <i class="bx bxl-nodejs bx-lg"></i>
+
+                <p><strong>Node.js</strong> </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+              <div class="count-box">
+                <img src="https://www.djangoproject.com/m/img/logos/django-logo-negative.svg" alt="Django Logo" style="height: 3rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+
+                <p><strong>Django</strong> </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="row skills-content">
+        <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
+        </br>
+          <h3 style="color:#149ddd;"><strong>Frameworks</strong></h3>
+          <br>
+          <div class="row no-gutters">
+
+            <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+              <div class="count-box" style="text-align: center; display: inline-block;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Hadoop_logo.svg"
+                  style="height: 3rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+                <p><strong style="align-content: center;display: block;">Hadoop</strong> </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+              <div class="count-box" style="text-align: center; display: inline-block;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg"
+                  alt="Apache Spark"
+                  style="height: 3.5rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+                <p><strong style="align-content: center;display: block;">Spark</strong> </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+              <div class="count-box" style="text-align: center; display: inline-block;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png"
+                  style="height: 2rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 2;">
+
+                <p><strong style="align-content: center;display: block;">Pytorch</strong> </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+              <div class="count-box" style="text-align: center; display: inline-block;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Keras_logo.svg"
+                  style="height: 3.5rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+                <p><strong style="align-content: center;display: block;">Keras</strong> </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+              <div class="count-box" style="text-align: center; display: inline-block;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg"
+                  style="height: 3.5rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+                <p><strong style="align-content: center;display: block;">Tensorflow</strong> </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
+              <div class="count-box" style="text-align: center; display: inline-block;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
+                  style="height: 3.5rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+                <p><strong style="align-content: center;display: block;">Sklearn</strong> </p>
+              </div>
+            </div>
+
+
+
+
+          </div>
+        </div>
+        <div class="row skills-content">
+
+          <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
+          </br>
+            <h3 style="color:#149ddd;"><strong>Cloud</strong></h3>
+            <br>
+            <div class="row no-gutters">
+
+              <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
+                data-aos="fade-up">
+                <div class="count-box">
+                  <center>
+                    <i class="bx bxl-aws bx-lg"></i>
+
+
+                    <p><strong>Amazon Web Services</strong> </p>
+                  </center>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
+                data-aos="fade-up">
+                <div class="count-box">
+                  <center><i class="bx bxl-google-cloud bx-lg"></i></center>
+
+
+                  <p><strong>Google Cloud</strong> </p>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+        <div class="row skills-content">
+          <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
+          </br>
+            <h3 style="color:#149ddd;"><strong>Databases</strong></h3>
+            <br>
+            <div class="row no-gutters">
+
+              <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
+                data-aos="fade-up">
+                <div class="count-box" style="text-align: center; display: inline-block;">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/MySQL_textlogo.svg"
+                    style="height: 3rem; width: 6rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+                  <p><strong style="align-content: center;display: block;">MySQL</strong> </p>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
+                data-aos="fade-up">
+                <div class="count-box" style="text-align: center; display: inline-block;">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg"
+                    style="height: 3rem; width: 6rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+                  <p><strong style="align-content: center;display: block;">MongoDB</strong> </p>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
+                data-aos="fade-up">
+                <div class="count-box" style="text-align: center; display: inline-block;">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg"
+                    style="height: 3rem; width: 6rem; font-weight: 400; display: inline-block; line-height: 1;">
+
+                  <p><strong style="align-content: center;display: block;">PostgreSQL</strong> </p>
+                </div>
+              </div>
+
+
+
+
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
+            </br>
+              <h3 style="color:#149ddd;"><strong>Tools</strong></h3>
+              <br>
+              <div class="row no-gutters">
+
+                <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
+                  data-aos="fade-up">
+                  <div class="count-box">
+                    <i class="bx bxl-docker bx-lg"></i>
+
+                    <p><strong>Docker</strong> </p>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
+                  data-aos="fade-up">
+                  <div class="count-box">
+                    <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins Logo" width="40" />
+                    <center>
+                      <p><strong>Jenkins</strong> </p>
+                    </center>
+
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
+                  data-aos="fade-up">
+                  <div class="count-box">
+                    <i class="bx bxl-git bx-lg"></i>
+                    <center>
+                      <p><strong>Git</strong> </p>
+                    </center>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+
+</section><!-- /Skills Section -->
+
 
     <!-- Projects Section -->
     <section id="projects" class="projects section light-background">
+
+      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Projects</h2>
-      </div>
+      </div><!-- End Section Title -->
 
       <div class="container">
+
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-            <!-- Existing Items (kept) -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product filter-ml">
+  
+<div class="portfolio-content h-100">
+    <img src="assets/img/portfolio/kt-assistant.png" class="img-fluid" alt="KT-Assistant project thumbnail">
+    <div class="portfolio-info">
+      <a href="https://github.com/juniemariam/KT-Assistant" target="_blank" class="portfolio-title">
+        <h4>KT-Assistant (RAG + Agents)</h4>
+        <i class="bi bi-github"></i>
+      </a>
+
+      <!-- Optional short blurb; remove if you want only title + tiles -->
+      <p class="mb-2">Knowledge Transfer assistant with RAG, Slack &amp; Confluence integrations, deployable on GKE.</p>
+
+      <div class="tech-tiles">
+        <!-- Backend -->
+        <span class="tech-tile">Python</span>
+        <span class="tech-tile">FastAPI</span>
+        <span class="tech-tile">LangChain</span>
+        <span class="tech-tile">SBERT</span>
+        <span class="tech-tile">FAISS</span>
+        <span class="tech-tile">ChromaDB</span>
+
+        <!-- Frontend -->
+        <span class="tech-tile">Streamlit</span>
+
+        <!-- ML Models -->
+        <span class="tech-tile">Gemini 1.5 Pro</span>
+
+        <!-- Cloud -->
+        <span class="tech-tile">GCP</span>
+        <span class="tech-tile">GKE</span>
+        <span class="tech-tile">Container Registry</span>
+
+        <!-- DevOps -->
+        <span class="tech-tile">Docker</span>
+        <span class="tech-tile">Kubernetes</span>
+        <span class="tech-tile">GitHub Actions</span>
+
+        <!-- Integrations -->
+        <span class="tech-tile">Slack API</span>
+        <span class="tech-tile">Confluence API</span>
+      </div>
+    </div>
+  </div>
+</div><!-- End Portfolio Item -->
+
+
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/ecommerce.jpg" class="img-fluid" alt="Ecommerce app screenshot" />
+                <img src="assets/img/portfolio/ecommerce.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="https://github.com/juniemariam/ECommerceWebApp" target="_blank" rel="noopener noreferrer" class="portfolio-title">
+                  <a href="https://github.com/juniemariam/ECommerceWebApp" target="_blank" class="portfolio-title">
                     <h4>Ecommerce Website</h4>
-                    <i class="bi bi-github" aria-hidden="true"></i>
+                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
                   </a>
-                  <div class="tech-tiles"><span class="tech-tile">Python</span><span class="tech-tile">Django</span><span class="tech-tile">AWS</span><span class="tech-tile">RDS PostgreSQL</span><span class="tech-tile">Terraform</span></div>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">Python</span>
+                    <span class="tech-tile">Django</span>
+                    <span class="tech-tile">AWS</span>
+                    <span class="tech-tile">RDS PostgreSQL</span>
+                    <span class="tech-tile">Terraform</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/car.png" class="img-fluid" alt="Recarnation app screenshot" />
+                <img src="assets/img/portfolio/car.png" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="https://github.com/juniemariam/Recarnation-NanoClouds" target="_blank" rel="noopener noreferrer" class="portfolio-title">
+
+                  <a href="https://github.com/juniemariam/Recarnation-NanoClouds" target="_blank" class="portfolio-title">
                     <h4>Recarnation</h4>
-                    <i class="bi bi-github" aria-hidden="true"></i>
+                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
                   </a>
-                  <div class="tech-tiles"><span class="tech-tile">AWS</span><span class="tech-tile">Terraform</span><span class="tech-tile">Django</span><span class="tech-tile">PostgreSQL</span><span class="tech-tile">Jenkins</span><span class="tech-tile">Docker</span><span class="tech-tile">Okta SSO</span><span class="tech-tile">XGBoost</span></div>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">AWS</span>
+                    <span class="tech-tile">Terraform</span>
+                    <span class="tech-tile">Django</span>
+                    <span class="tech-tile">PostgreSQL</span>
+                    <span class="tech-tile">Jenkins</span>
+                     <span class="tech-tile">Docker</span>
+                    <span class="tech-tile">Okta SSO </span>
+                    <span class="tech-tile">XGBoost</span>
+
+                  </div>
                 </div>
               </div>
-            </div>
+            </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/syncwell.png" class="img-fluid" alt="SyncWell app screenshot" />
-                <div class="portfolio-info">
-                  <a href="https://github.com/juniemariam/SyncWell" target="_blank" rel="noopener noreferrer" class="portfolio-title">
-                    <h4>SyncWell: RAG App</h4>
-                    <i class="bi bi-github" aria-hidden="true"></i>
+                <img src="assets/img/portfolio/syncwell.png" class="img-fluid" alt="">
+                <div class="portfolio-info">                  
+                  <a href="https://github.com/juniemariam/SyncWell" target="_blank" class="portfolio-title">
+                    <h4>SyncWell: RAG App </h4>
+                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
                   </a>
-                  <div class="tech-tiles"><span class="tech-tile">Java</span><span class="tech-tile">Jetpack Compose</span><span class="tech-tile">Gemini API</span><span class="tech-tile">Sentence Transformers</span><span class="tech-tile">ChromaDB</span></div>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">Java</span>
+                    <span class="tech-tile">Jetpack Compose</span>
+                    <span class="tech-tile">Gemini API</span>
+                    <span class="tech-tile">Sentence Transformer</span>
+                    <span class="tech-tile">Chroma DB</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/shopping.jpg" class="img-fluid" alt="Shopping Spree app screenshot" />
+                <img src="assets/img/portfolio/shopping.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="https://github.com/juniemariam/ShoppingSpree" target="_blank" rel="noopener noreferrer" class="portfolio-title">
+                  <!-- <a href="https://github.com/juniemariam/ShoppingSpree" target="_blank" class="portfolio-title">
                     <h4>Shopping Spree</h4>
-                    <i class="bi bi-github" aria-hidden="true"></i>
+                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
+                  <!-- </a> --> 
+                  <a href="https://github.com/juniemariam/ShoppingSpree" target="_blank" class="portfolio-title">
+                    <h4>Shopping Spree</h4>
+                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
                   </a>
-                  <a href="https://www.ijeat.org/wp-content/uploads/papers/v8i6/F8120088619.pdf" target="_blank" rel="noopener noreferrer" class="portfolio-title" aria-label="Publication">
-                    <i class="bi bi-journal-text" aria-hidden="true"></i>
+                  <a href="https://www.ijeat.org/wp-content/uploads/papers/v8i6/F8120088619.pdf" target="_blank" class="portfolio-title">
+                    <i class="bi bi-journal-text"></i> <!-- Publication Icon -->
                   </a>
-                  <div class="tech-tiles"><span class="tech-tile">React</span><span class="tech-tile">Node.js</span><span class="tech-tile">Firebase</span><span class="tech-tile">ML</span><span class="tech-tile">Heroku</span></div>
+
+                  <div class="tech-tiles">
+                    <span class="tech-tile">ReactJS</span>
+                    <span class="tech-tile">Node.js</span>
+                    <span class="tech-tile">Firebase</span>
+                    <span class="tech-tile">ML</span>
+                    <span class="tech-tile">Heroku</span>
+                  </div>
+
                 </div>
               </div>
-            </div>
+            </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/tweetclone.jpg" class="img-fluid" alt="Twitter clone screenshot" />
+                <img src="assets/img/portfolio/tweetclone.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="https://github.com/juniemariam/TwitterClone" target="_blank" rel="noopener noreferrer" class="portfolio-title">
+
+                  <a href="https://github.com/juniemariam/TwitterClone" target="_blank" class="portfolio-title">
                     <h4>Twitter Clone</h4>
-                    <i class="bi bi-github" aria-hidden="true"></i>
+                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
                   </a>
-                  <div class="tech-tiles"><span class="tech-tile">Python</span><span class="tech-tile">Twitter API</span><span class="tech-tile">SQLite3</span></div>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">Python</span>
+                    <span class="tech-tile">Twitter API</span>
+                    <span class="tech-tile">SQLite3</span>
+                  </div>
+
                 </div>
               </div>
-            </div>
+            </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/demensia.jpg" class="img-fluid" alt="Dementia detection project" />
+                <img src="assets/img/portfolio/demensia.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="https://github.com/juniemariam/DementiaDetection" target="_blank" rel="noopener noreferrer" class="portfolio-title">
+
+
+                  <a href="https://github.com/juniemariam/DementiaDetection" target="_blank" class="portfolio-title">
                     <h4>Dementia Detection</h4>
-                    <i class="bi bi-github" aria-hidden="true"></i>
+                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
                   </a>
-                  <div class="tech-tiles"><span class="tech-tile">Python</span><span class="tech-tile">scikit‑learn</span><span class="tech-tile">Pandas</span><span class="tech-tile">NumPy</span></div>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">Python</span>
+                    <span class="tech-tile">Scikit-Learn</span>
+                    <span class="tech-tile">Pandas</span>
+                    <span class="tech-tile">Numpy</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/aws.png" class="img-fluid" alt="AWS prep project" />
-                <div class="portfolio-info">
-                  <a href="https://github.com/juniemariam/Aws-Certified-Solutions-Architect" target="_blank" rel="noopener noreferrer" class="portfolio-title">
+                <img src="assets/img/portfolio/aws.png" class="img-fluid" alt="">
+                <div class="portfolio-info">                  
+                  <a href="https://github.com/juniemariam/Aws-Certified-Solutions-Architect" target="_blank" class="portfolio-title">
                     <h4>AWS Solutions Architect Prep</h4>
-                    <i class="bi bi-github" aria-hidden="true"></i>
+                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
                   </a>
-                  <div class="tech-tiles"><span class="tech-tile">AWS</span><span class="tech-tile">Terraform</span></div>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">AWS</span>
+                    <span class="tech-tile">Terraform</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </div><!-- End Portfolio Item -->
 
-            <!-- New Items Added -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ml">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/it-triage.jpg" class="img-fluid" alt="Smart IT Ticket Triage Assistant" />
-                <div class="portfolio-info">
-                  <a href="https://github.com/juniemariam" target="_blank" rel="noopener noreferrer" class="portfolio-title">
-                    <h4>Smart IT Ticket Triage Assistant</h4>
-                    <i class="bi bi-github" aria-hidden="true"></i>
-                  </a>
-                  <div class="tech-tiles"><span class="tech-tile">FastAPI</span><span class="tech-tile">LLM</span><span class="tech-tile">Kubeflow</span><span class="tech-tile">Triton</span><span class="tech-tile">ONNX</span></div>
-                </div>
-              </div>
-            </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-security">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/audit-assistant.jpg" class="img-fluid" alt="Secure AI Audit Assistant" />
-                <div class="portfolio-info">
-                  <a href="https://github.com/juniemariam" target="_blank" rel="noopener noreferrer" class="portfolio-title">
-                    <h4>Secure AI Audit Assistant (RAG + RBAC)</h4>
-                    <i class="bi bi-github" aria-hidden="true"></i>
-                  </a>
-                  <div class="tech-tiles"><span class="tech-tile">RAG</span><span class="tech-tile">Neo4j</span><span class="tech-tile">MongoDB</span><span class="tech-tile">Temporal</span><span class="tech-tile">AWS</span></div>
-                </div>
-              </div>
-            </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ml">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/genomics.jpg" class="img-fluid" alt="Genome2Expression project" />
-                <div class="portfolio-info">
-                  <a href="https://github.com/juniemariam" target="_blank" rel="noopener noreferrer" class="portfolio-title">
-                    <h4>Genome2Expression</h4>
-                    <i class="bi bi-github" aria-hidden="true"></i>
-                  </a>
-                  <div class="tech-tiles"><span class="tech-tile">PyTorch</span><span class="tech-tile">CUDA</span><span class="tech-tile">TFLite/ONNX</span><span class="tech-tile">GKE</span></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ml">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/wakeword.jpg" class="img-fluid" alt="Wake word detector" />
-                <div class="portfolio-info">
-                  <a href="https://github.com/juniemariam" target="_blank" rel="noopener noreferrer" class="portfolio-title">
-                    <h4>Wake Word Detector</h4>
-                    <i class="bi bi-github" aria-hidden="true"></i>
-                  </a>
-                  <div class="tech-tiles"><span class="tech-tile">Signal Processing</span><span class="tech-tile">TFLite</span><span class="tech-tile">Android</span></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mobile">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/emotion-app.jpg" class="img-fluid" alt="Android emotion classifier" />
-                <div class="portfolio-info">
-                  <a href="https://github.com/juniemariam" target="_blank" rel="noopener noreferrer" class="portfolio-title">
-                    <h4>Android Audio Emotion Classifier</h4>
-                    <i class="bi bi-github" aria-hidden="true"></i>
-                  </a>
-                  <div class="tech-tiles"><span class="tech-tile">Kotlin</span><span class="tech-tile">TarsosDSP</span><span class="tech-tile">Log‑Mel</span><span class="tech-tile">TFLite</span></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/restaurant.jpg" class="img-fluid" alt="Restaurant manager platform" />
-                <div class="portfolio-info">
-                  <a href="https://github.com/juniemariam" target="_blank" rel="noopener noreferrer" class="portfolio-title">
-                    <h4>Restaurant Manager Platform</h4>
-                    <i class="bi bi-github" aria-hidden="true"></i>
-                  </a>
-                  <div class="tech-tiles"><span class="tech-tile">Flask</span><span class="tech-tile">React</span><span class="tech-tile">PostgreSQL</span><span class="tech-tile">JWT</span></div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
+          </div><!-- End Portfolio Container -->
           <div style="text-align: center; margin-top: 30px;">
             <h2>View More Projects</h2>
-            <a href="https://github.com/juniemariam" target="_blank" rel="noopener noreferrer" style="text-decoration: none; font-size: 18px;">
-              Check out my GitHub <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            <a href="https://github.com/juniemariam" target="_blank" style="text-decoration: none; color: #007bff; font-size: 18px;">
+              Check out my GitHub <i class="bi bi-arrow-right"></i>
             </a>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Professional Affiliations -->
-    <section id="professionalAffiliations" class="certificate section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Professional Affiliations</h2>
+        </div>
+
       </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Certification Section -->
+    <section id="professionalAffliations" class="certificate section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>PROFESSIONAL AFFILIATIONS</h2>
+      </div><!-- End Section Title -->
+
       <div class="container">
+
         <div class="row gy-4">
+
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
             <div>
-              <img src="assets/img/codepath.jpg" alt="CodePath Logo" class="img-fluid" style="width: 100px; height: auto; margin-bottom: 10px;" />
+              <img src="assets/img/codepath.jpg" alt="CodePath Logo" class="img-fluid" style="width: 100px; height: auto; margin-bottom: 10px;">
               <h4 class="title">CodePath</h4>
             </div>
           </div>
+          <!-- End Service Item -->
+
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
             <div>
-              <img src="assets/img/swe.png" alt="SWE Logo" class="img-fluid" style="width: 100px; height: auto; margin-bottom: 10px;" />
+              <img src="assets/img/swe.png" alt="SWE Logo" class="img-fluid" style="width: 100px; height: auto; margin-bottom: 10px;">
               <h4 class="title">Society of Women Engineers</h4>
             </div>
-          </div>
+          </div><!-- End Service Item -->
+
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
             <div>
-              <img src="assets/img/RTC.jpg" alt="RTC Logo" class="img-fluid" style="width: 100px; height: auto; margin-bottom: 10px;" />
+              <img src="assets/img/RTC.jpg" alt="RTC Logo" class="img-fluid" style="width: 100px; height: auto; margin-bottom: 10px;">
               <h4 class="title">Rewriting the Code</h4>
             </div>
-          </div>
+          </div><!-- End Service Item -->
         </div>
-      </div>
-    </section>
 
-    <!-- Certificates & Recognitions -->
-    <section id="certs" class="testimonials section light-background">
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Testimonials Section -->
+    <section id="CertificatesAndRecognitions" class="testimonials section light-background">
+
+      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Certificates and Recognitions</h2>
-      </div>
+      </div><!-- End Section Title -->
+
       <div class="container" data-aos="fade-up" data-aos-delay="100">
+
         <div class="swiper init-swiper">
           <script type="application/json" class="swiper-config">
             {
               "loop": true,
               "speed": 600,
-              "autoplay": { "delay": 5000 },
+              "autoplay": {
+                "delay": 5000
+              },
               "slidesPerView": "auto",
-              "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true },
-              "breakpoints": { "320": { "slidesPerView": 1, "spaceBetween": 40 }, "1200": { "slidesPerView": 3, "spaceBetween": 1 } }
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 1
+                }
+              }
             }
           </script>
           <div class="swiper-wrapper">
-            <!-- original slides preserved -->
-            <div class="swiper-slide"><div class="testimonial-item"><p><span>DevOps Essentials</span></p><img src="assets/img/testimonials/google.jpg" class="testimonial-img" alt="Google" /><h3>Google</h3></div></div>
-            <div class="swiper-slide"><div class="testimonial-item"><p><span>Fundamentals of Deep Learning for Computer Vision</span></p><img src="assets/img/testimonials/Nvidia.jpg" class="testimonial-img" alt="Nvidia" /><h3>Nvidia</h3></div></div>
-            <div class="swiper-slide"><div class="testimonial-item"><p><span>Introduction to Data Science and Methodologies</span></p><img src="assets/img/testimonials/ibm.png" class="testimonial-img" alt="IBM" /><h3>IBM</h3></div></div>
-            <div class="swiper-slide"><div class="testimonial-item"><p><span>AI From the Data Center to the Edge – An Optimized Path Using Intel Architecture</span></p><img src="assets/img/testimonials/intel.png" class="testimonial-img" alt="Intel" /><h3>Intel</h3></div></div>
-            <div class="swiper-slide"><div class="testimonial-item"><p><span>Introduction to Embedded Machine Learning</span></p><img src="assets/img/testimonials/edgeimpulse.png" class="testimonial-img" alt="Edge Impulse" /><h3>Edge Impulse</h3></div></div>
-            <div class="swiper-slide"><div class="testimonial-item"><p><span>AI for Medical Diagnosis</span></p><img src="assets/img/testimonials/dl.png" class="testimonial-img" alt="DeepLearning.AI" /><h3>DeepLearning.AI</h3></div></div>
-            <div class="swiper-slide"><div class="testimonial-item"><p><span>Fundamentals of Reinforcement Learning</span></p><img src="assets/img/testimonials/univ.png" class="testimonial-img" alt="University of Alberta" /><h3>University Of Alberta</h3></div></div>
-            <div class="swiper-slide"><div class="testimonial-item"><p><span>Spot Award for taking ownership VS2022 migration at train level</span></p><img src="assets/img/testimonials/philips.jpeg" class="testimonial-img" alt="Philips" /><h3>Philips</h3></div></div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <span>DevOps Essentials</span> 
+                </p>
+                <img src="assets/img/testimonials/google.jpg" class="testimonial-img" alt="">
+                <h3>Google</h3>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <span>Fundamentals of Deep Learning for Computer Vision</span>
+                </p>
+                <img src="assets/img/testimonials/Nvidia.jpg" class="testimonial-img" alt="">
+                <h3>Nvidia</h3>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <span>Introduction to Data Science and Methodologies</span>
+                </p>
+                <img src="assets/img/testimonials/ibm.png" class="testimonial-img" alt="">
+                <h3>IBM</h3>
+
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <span>AI From the Data Center to the Edge – An Optimized Path Using Intel® Architecture</span>
+                </p>
+                <img src="assets/img/testimonials/intel.png" class="testimonial-img" alt="">
+                <h3>Intel</h3>
+
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <span>Introduction to Embedded Machine Learning</span>
+                </p>
+                <img src="assets/img/testimonials/edgeimpulse.png" class="testimonial-img" alt="">
+                <h3>Edge Impulse</h3>
+
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <span>AI for Medical Diagnosis</span>
+                </p>
+                <img src="assets/img/testimonials/dl.png" class="testimonial-img" alt="">
+                <h3>DeepLearning.AI</h3>
+
+              </div>
+            </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p>
+                <span>Fundamentals of Reinforcement Learning</span>
+              </p>
+              <img src="assets/img/testimonials/univ.png" class="testimonial-img" alt="">
+              <h3>University Of Alberta</h3>
+
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p>
+                <span>Spot Award for taking ownership VS2022 migration at train level</span>
+              </p>
+              <img src="assets/img/testimonials/philips.jpeg" class="testimonial-img" alt="">
+              <h3>Philips</h3>
+
+            </div>
+          </div><!-- End testimonial item -->
+
           </div>
           <div class="swiper-pagination"></div>
         </div>
-      </div>
-    </section>
 
-    <!-- Helpful Links -->
-    <section id="links" class="section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Links</h2>
-        <p>Quick access to profiles and publications.</p>
       </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="d-flex flex-wrap gap-3">
-          <a class="btn btn-outline-primary" href="https://github.com/juniemariam" target="_blank" rel="noopener noreferrer"><i class="bi bi-github me-1"></i> GitHub</a>
-          <a class="btn btn-outline-primary" href="https://www.linkedin.com/in/junie-mariam-varghese/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin me-1"></i> LinkedIn</a>
-          <a class="btn btn-outline-primary" href="https://x.com/JunieVarghese" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x me-1"></i> X (Twitter)</a>
-          <a class="btn btn-outline-secondary" href="https://www.ijeat.org/wp-content/uploads/papers/v8i6/F8120088619.pdf" target="_blank" rel="noopener noreferrer"><i class="bi bi-journal-text me-1"></i> Publication</a>
-        </div>
-      </div>
-    </section>
+
+    </section><!-- /Testimonials Section -->
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
+
+      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-      </div>
+      </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
+
         <div class="row gy-4">
+
           <div class="col-lg-5">
+
             <div class="info-wrap">
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-geo-alt flex-shrink-0" aria-hidden="true"></i>
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
                 <div>
                   <h3>Address</h3>
                   <p>San Jose, California, United States 95126</p>
                 </div>
-              </div>
+              </div><!-- End Info Item -->
+
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                <i class="bi bi-envelope flex-shrink-0" aria-hidden="true"></i>
+                <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
                   <h3>Email</h3>
-                  <p><a href="mailto:junie.mariamvarghese@sjsu.edu">junie.mariamvarghese@sjsu.edu</a></p>
+                  <p>junie.mariamvarghese@sjsu.edu</p>
                 </div>
-              </div>
-              <!-- Updated map embed to San Jose (previously pointed to NYC) -->
-              <iframe title="San Jose Map" src="https://www.google.com/maps?q=San+Jose,+CA&output=embed" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div><!-- End Info Item -->
+
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
+                frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
 
           <div class="col-lg-7">
-            <iframe title="Contact Form" src="https://forms.gle/U66ipXKRw2wi1Ad29" width="100%" height="900" style="border:0;" loading="lazy"></iframe>
-          </div>
+            <iframe src="https://forms.gle/U66ipXKRw2wi1Ad29" width="800" height="900"></iframe>
+          </div><!-- End Contact Form -->
+
         </div>
+
       </div>
-    </section>
+
+    </section><!-- /Contact Section -->
+
   </main>
 
+
+
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Scroll to top"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
-  <div id="preloader" aria-hidden="true"></div>
+  <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -433,5 +910,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>
