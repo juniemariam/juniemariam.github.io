@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - iPortfolio Bootstrap Template</title>
+  <title>Junies Portfolio</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -116,7 +116,7 @@
           My background also includes a master’s in Artificial Intelligence and Machine Learning, which has fueled my excitement for innovation and creative tech solutions.
           With experience working at Philips Healthcare, I’ve been part of projects that make a real impact—and this is where my love for technology truly deepened.
           I thrive on challenges, love learning new technologies, and am always looking for ways to make a difference through my work.
-          I’m currently on the lookout for exciting opportunities in<b>  Software Engineering, Full Stack Development, Cloud and Machine Learning, especially summer 2025 and fall 2025 internships</b>, where I can bring my skills and passion for tech to a forward-thinking team. Let’s build something great together! 🤝✨</p>
+          I’m currently on the lookout for exciting opportunities in<b>  Software Engineering, Full Stack Development, Cloud and Machine Learning, especially fall 2025 internships and Full time opportunities </b>, where I can bring my skills and passion for tech to a forward-thinking team. Let’s build something great together! 🤝✨</p>
 
         </div><!-- End Section Title -->
 
@@ -443,228 +443,180 @@
 </section><!-- /Skills Section -->
 
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects section light-background">
+    <!-- Minimal styles for clean, uniform cards (no images) -->
+<style>
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .project-card {
+    background: #fff;
+    border: 1px solid #e7e7e9;
+    border-radius: 16px;
+    padding: 16px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0,0,0,.04);
+  }
+  .project-header {
+    display:flex; justify-content:space-between; align-items:center; gap:10px;
+  }
+  .project-title { font-size: 1.05rem; font-weight: 700; margin: 0; }
+  .project-blurb { color:#555; font-size:.95rem; margin:8px 0 10px; }
+  .tech-tiles { display:flex; flex-wrap:wrap; gap:6px; margin-top: 4px; }
+  .tech-tile {
+    font-size:.78rem; padding:4px 8px; border-radius:999px;
+    background:#f0f2f5; border:1px solid #e6e8ec;
+  }
+  .project-links { margin-top:auto; display:flex; gap:12px; align-items:center; }
+  .project-links a { text-decoration:none; }
+</style>
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Projects</h2>
-      </div><!-- End Section Title -->
+<!-- Projects Section (thumbnail-free, HTML-only) -->
+<section id="projects" class="projects section light-background">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Projects</h2>
+  </div>
 
-      <div class="container">
+  <div class="container">
+    <div class="project-grid" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+      <!-- KT-Assistant -->
+      <article class="project-card">
+        <div class="project-header">
+          <h4 class="project-title">KT-Assistant (RAG + Agents)</h4>
+          <a href="https://github.com/juniemariam/KT-Assistant" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        </div>
+        <p class="project-blurb">Knowledge Transfer assistant with RAG, Slack &amp; Confluence integrations, deployable on GKE.</p>
+        <div class="tech-tiles">
+          <span class="tech-tile">Python</span><span class="tech-tile">FastAPI</span><span class="tech-tile">LangChain</span>
+          <span class="tech-tile">SBERT</span><span class="tech-tile">FAISS</span><span class="tech-tile">Streamlit</span>
+          <span class="tech-tile">GCP</span><span class="tech-tile">GKE</span><span class="tech-tile">Docker</span><span class="tech-tile">Kubernetes</span>
+          <span class="tech-tile">Slack API</span><span class="tech-tile">Confluence API</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/juniemariam/KT-Assistant" target="_blank">View on GitHub →</a>
+        </div>
+      </article>
 
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+      <!-- Ecommerce Website -->
+      <article class="project-card">
+        <div class="project-header">
+          <h4 class="project-title">Ecommerce Website</h4>
+          <a href="https://github.com/juniemariam/ECommerceWebApp" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        </div>
+        <p class="project-blurb">Django app on AWS with RDS + Terraform.</p>
+        <div class="tech-tiles">
+          <span class="tech-tile">Python</span><span class="tech-tile">Django</span><span class="tech-tile">AWS</span>
+          <span class="tech-tile">RDS PostgreSQL</span><span class="tech-tile">Terraform</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/juniemariam/ECommerceWebApp" target="_blank">View on GitHub →</a>
+        </div>
+      </article>
 
+      <!-- Recarnation -->
+      <article class="project-card">
+        <div class="project-header">
+          <h4 class="project-title">Recarnation</h4>
+          <a href="https://github.com/juniemariam/Recarnation-NanoClouds" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        </div>
+        <div class="tech-tiles">
+          <span class="tech-tile">AWS</span><span class="tech-tile">Terraform</span><span class="tech-tile">Django</span>
+          <span class="tech-tile">PostgreSQL</span><span class="tech-tile">Jenkins</span><span class="tech-tile">Docker</span>
+          <span class="tech-tile">Okta SSO</span><span class="tech-tile">XGBoost</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/juniemariam/Recarnation-NanoClouds" target="_blank">View on GitHub →</a>
+        </div>
+      </article>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product filter-ml">
-  
-<div class="portfolio-content h-100">
-    <img src="assets/img/portfolio/kt-assistant.png" class="img-fluid" alt="KT-Assistant project thumbnail">
-    <div class="portfolio-info">
-      <a href="https://github.com/juniemariam/KT-Assistant" target="_blank" class="portfolio-title">
-        <h4>KT-Assistant (RAG + Agents)</h4>
-        <i class="bi bi-github"></i>
-      </a>
+      <!-- SyncWell -->
+      <article class="project-card">
+        <div class="project-header">
+          <h4 class="project-title">SyncWell: RAG App</h4>
+          <a href="https://github.com/juniemariam/SyncWell" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        </div>
+        <div class="tech-tiles">
+          <span class="tech-tile">Java</span><span class="tech-tile">Jetpack Compose</span><span class="tech-tile">Gemini API</span>
+          <span class="tech-tile">Sentence Transformer</span><span class="tech-tile">Chroma DB</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/juniemariam/SyncWell" target="_blank">View on GitHub →</a>
+        </div>
+      </article>
 
-      <!-- Optional short blurb; remove if you want only title + tiles -->
-      <p class="mb-2">Knowledge Transfer assistant with RAG, Slack &amp; Confluence integrations, deployable on GKE.</p>
+      <!-- Shopping Spree -->
+      <article class="project-card">
+        <div class="project-header">
+          <h4 class="project-title">Shopping Spree</h4>
+          <span>
+            <a href="https://github.com/juniemariam/ShoppingSpree" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="https://www.ijeat.org/wp-content/uploads/papers/v8i6/F8120088619.pdf" target="_blank" aria-label="Paper" style="margin-left:8px;"><i class="bi bi-journal-text"></i></a>
+          </span>
+        </div>
+        <div class="tech-tiles">
+          <span class="tech-tile">ReactJS</span><span class="tech-tile">Node.js</span><span class="tech-tile">Firebase</span>
+          <span class="tech-tile">ML</span><span class="tech-tile">Heroku</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/juniemariam/ShoppingSpree" target="_blank">View on GitHub →</a>
+        </div>
+      </article>
 
-      <div class="tech-tiles">
-        <!-- Backend -->
-        <span class="tech-tile">Python</span>
-        <span class="tech-tile">FastAPI</span>
-        <span class="tech-tile">LangChain</span>
-        <span class="tech-tile">SBERT</span>
-        <span class="tech-tile">FAISS</span>
-        <span class="tech-tile">ChromaDB</span>
+      <!-- Twitter Clone -->
+      <article class="project-card">
+        <div class="project-header">
+          <h4 class="project-title">Twitter Clone</h4>
+          <a href="https://github.com/juniemariam/TwitterClone" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        </div>
+        <div class="tech-tiles">
+          <span class="tech-tile">Python</span><span class="tech-tile">Twitter API</span><span class="tech-tile">SQLite3</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/juniemariam/TwitterClone" target="_blank">View on GitHub →</a>
+        </div>
+      </article>
 
-        <!-- Frontend -->
-        <span class="tech-tile">Streamlit</span>
+      <!-- Dementia Detection -->
+      <article class="project-card">
+        <div class="project-header">
+          <h4 class="project-title">Dementia Detection</h4>
+          <a href="https://github.com/juniemariam/DementiaDetection" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        </div>
+        <div class="tech-tiles">
+          <span class="tech-tile">Python</span><span class="tech-tile">Scikit-Learn</span><span class="tech-tile">Pandas</span><span class="tech-tile">NumPy</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/juniemariam/DementiaDetection" target="_blank">View on GitHub →</a>
+        </div>
+      </article>
 
-        <!-- ML Models -->
-        <span class="tech-tile">Gemini 1.5 Pro</span>
+      <!-- AWS Solutions Architect Prep -->
+      <article class="project-card">
+        <div class="project-header">
+          <h4 class="project-title">AWS Solutions Architect Prep</h4>
+          <a href="https://github.com/juniemariam/Aws-Certified-Solutions-Architect" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        </div>
+        <div class="tech-tiles">
+          <span class="tech-tile">AWS</span><span class="tech-tile">Terraform</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/juniemariam/Aws-Certified-Solutions-Architect" target="_blank">View on GitHub →</a>
+        </div>
+      </article>
 
-        <!-- Cloud -->
-        <span class="tech-tile">GCP</span>
-        <span class="tech-tile">GKE</span>
-        <span class="tech-tile">Container Registry</span>
+    </div>
 
-        <!-- DevOps -->
-        <span class="tech-tile">Docker</span>
-        <span class="tech-tile">Kubernetes</span>
-        <span class="tech-tile">GitHub Actions</span>
-
-        <!-- Integrations -->
-        <span class="tech-tile">Slack API</span>
-        <span class="tech-tile">Confluence API</span>
-      </div>
+    <div style="text-align:center; margin-top:24px;">
+      <h3>View More Projects</h3>
+      <a href="https://github.com/juniemariam" target="_blank" style="text-decoration:none;">Check out my GitHub →</a>
     </div>
   </div>
-</div><!-- End Portfolio Item -->
+</section>
 
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/ecommerce.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <a href="https://github.com/juniemariam/ECommerceWebApp" target="_blank" class="portfolio-title">
-                    <h4>Ecommerce Website</h4>
-                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
-                  </a>
-                  <div class="tech-tiles">
-                    <span class="tech-tile">Python</span>
-                    <span class="tech-tile">Django</span>
-                    <span class="tech-tile">AWS</span>
-                    <span class="tech-tile">RDS PostgreSQL</span>
-                    <span class="tech-tile">Terraform</span>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/car.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-
-                  <a href="https://github.com/juniemariam/Recarnation-NanoClouds" target="_blank" class="portfolio-title">
-                    <h4>Recarnation</h4>
-                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
-                  </a>
-                  <div class="tech-tiles">
-                    <span class="tech-tile">AWS</span>
-                    <span class="tech-tile">Terraform</span>
-                    <span class="tech-tile">Django</span>
-                    <span class="tech-tile">PostgreSQL</span>
-                    <span class="tech-tile">Jenkins</span>
-                     <span class="tech-tile">Docker</span>
-                    <span class="tech-tile">Okta SSO </span>
-                    <span class="tech-tile">XGBoost</span>
-
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/syncwell.png" class="img-fluid" alt="">
-                <div class="portfolio-info">                  
-                  <a href="https://github.com/juniemariam/SyncWell" target="_blank" class="portfolio-title">
-                    <h4>SyncWell: RAG App </h4>
-                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
-                  </a>
-                  <div class="tech-tiles">
-                    <span class="tech-tile">Java</span>
-                    <span class="tech-tile">Jetpack Compose</span>
-                    <span class="tech-tile">Gemini API</span>
-                    <span class="tech-tile">Sentence Transformer</span>
-                    <span class="tech-tile">Chroma DB</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/shopping.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <!-- <a href="https://github.com/juniemariam/ShoppingSpree" target="_blank" class="portfolio-title">
-                    <h4>Shopping Spree</h4>
-                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
-                  <!-- </a> --> 
-                  <a href="https://github.com/juniemariam/ShoppingSpree" target="_blank" class="portfolio-title">
-                    <h4>Shopping Spree</h4>
-                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
-                  </a>
-                  <a href="https://www.ijeat.org/wp-content/uploads/papers/v8i6/F8120088619.pdf" target="_blank" class="portfolio-title">
-                    <i class="bi bi-journal-text"></i> <!-- Publication Icon -->
-                  </a>
-
-                  <div class="tech-tiles">
-                    <span class="tech-tile">ReactJS</span>
-                    <span class="tech-tile">Node.js</span>
-                    <span class="tech-tile">Firebase</span>
-                    <span class="tech-tile">ML</span>
-                    <span class="tech-tile">Heroku</span>
-                  </div>
-
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/tweetclone.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-
-                  <a href="https://github.com/juniemariam/TwitterClone" target="_blank" class="portfolio-title">
-                    <h4>Twitter Clone</h4>
-                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
-                  </a>
-                  <div class="tech-tiles">
-                    <span class="tech-tile">Python</span>
-                    <span class="tech-tile">Twitter API</span>
-                    <span class="tech-tile">SQLite3</span>
-                  </div>
-
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/demensia.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-
-
-                  <a href="https://github.com/juniemariam/DementiaDetection" target="_blank" class="portfolio-title">
-                    <h4>Dementia Detection</h4>
-                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
-                  </a>
-                  <div class="tech-tiles">
-                    <span class="tech-tile">Python</span>
-                    <span class="tech-tile">Scikit-Learn</span>
-                    <span class="tech-tile">Pandas</span>
-                    <span class="tech-tile">Numpy</span>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/aws.png" class="img-fluid" alt="">
-                <div class="portfolio-info">                  
-                  <a href="https://github.com/juniemariam/Aws-Certified-Solutions-Architect" target="_blank" class="portfolio-title">
-                    <h4>AWS Solutions Architect Prep</h4>
-                    <i class="bi bi-github"></i> <!-- GitHub Icon -->
-                  </a>
-                  <div class="tech-tiles">
-                    <span class="tech-tile">AWS</span>
-                    <span class="tech-tile">Terraform</span>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-
-
-          </div><!-- End Portfolio Container -->
-          <div style="text-align: center; margin-top: 30px;">
-            <h2>View More Projects</h2>
-            <a href="https://github.com/juniemariam" target="_blank" style="text-decoration: none; color: #007bff; font-size: 18px;">
-              Check out my GitHub <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Portfolio Section -->
 
     <!-- Certification Section -->
     <section id="professionalAffliations" class="certificate section">
