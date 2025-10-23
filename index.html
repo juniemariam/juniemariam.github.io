@@ -59,8 +59,9 @@
       text-align: center;
     }
 
-    #home h1 {
-      font-size: 4rem; /* smaller name */
+    #home h1{
+      font-size: clamp(1.8rem, 8vw, 3.5rem);
+      line-height: 1.1;
     }
     #home::before {
       content: "";
@@ -75,9 +76,27 @@
     }
 
 
-    #home p {
-      font-size: 3rem;
-      margin-top: 10px;
+    #home p{
+    font-size: clamp(1rem, 5.5vw, 2rem);
+    margin-top: 10px;
+  }
+    /* Keep the hero image behaving */
+    #home { position: relative; }
+    #home > img{
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; /* no cropping surprises */
+      z-index: 0;
+    }
+    #home .container{ position: relative; z-index: 1; }
+    
+    /* Make the badges smaller on small screens */
+    .tag-badge{ font-size: clamp(0.8rem, 2.8vw, 0.95rem); padding: 6px 12px; }
+    
+    /* Tweak spacing on phones */
+    @media (max-width: 576px){
+      #home.hero{ padding: 56px 0; min-height: 65vh; }
+      .ghc-banner{ font-size: 12px; padding: 6px 10px; top: 10px; right: 10px; }
     }
 
     /* GHC badge */
