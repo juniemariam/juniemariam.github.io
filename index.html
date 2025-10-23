@@ -48,403 +48,750 @@
     .audio-icon:hover {
       color: #0056b3;
     }
+
+    /* Make Hero Section smaller */
+    #home.hero {
+      min-height: 75vh; /* reduced height from near full screen (100vh) */
+      padding: 80px 0; /* adjust spacing */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    #home h1 {
+      font-size: 4rem; /* smaller name */
+    }
+    #home::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.25); /* soft dark overlay */
+      z-index: 0;
+    }
+    #home .container {
+      position: relative;
+      z-index: 1;
+    }
+
+
+    #home p {
+      font-size: 3rem;
+      margin-top: 10px;
+    }
+
+    /* GHC badge */
+    .ghc-banner { position:fixed; top:20px; right:16px; background:darkgoldenrod; color:black; padding:8px 14px; border-radius:999px; font-weight:600; box-shadow:0 6px 18px rgba(20,157,221,0.18); z-index:998; }
+
+
+    .divProper {
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-align: center;
+      margin: 1rem 0;
+      border-radius:10px;
+
+    }
+
+    .social-links a {
+      font-size: 1.2rem;
+      margin: 0 5px;
+      color: #fff;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #149ddd;
+    }
+
+    /* tagline styling */
+    .tagline {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 12px 0;
+    }
+
+    .tag-badge {
+      background: linear-gradient(90deg, #f0f7ff, #fff6fb);
+      color: #1f2a44;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 6px 14px;
+      border-radius: 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tag-badge i {
+      font-size: 1rem;
+      color: #149ddd;
+    }
+
+    /* responsive size adjustments */
+    @media (max-width: 576px) {
+      .tag-badge {
+        font-size: 0.85rem;
+        padding: 5px 10px;
+      }
+    }
+
+    /* Alt background to partition the section (light theme) */
+    .section.section-alt {
+      background: linear-gradient(180deg, #f8fafc 0%, #f5f7fb 100%);
+      border-top: 1px solid rgba(0,0,0,.06);
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+
+    /* Dark mode friendly */
+    @media (prefers-color-scheme: dark) {
+      .section.section-alt {
+        background: linear-gradient(180deg, #0b1220 0%, #0e1526 100%);
+        border-top-color: rgba(255,255,255,.06);
+        border-bottom-color: rgba(255,255,255,.06);
+      }
+    }
+
+    /* Keep visual hierarchy consistent with About */
+    #skills .section-title { margin-bottom: 10px; }
+    #skills .section-title p { margin-top: 6px; opacity: .85; }
+
+    /* Category headings */
+    #skills .skills-cat {
+      margin: 22px 0 8px;
+      color: #1160d8;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
+    /* Inline list with separators — simple, scannable */
+    #skills .skill-line {
+      list-style: none;
+      padding: 0; margin: 0 0 14px 0;
+      display: flex; flex-wrap: wrap; gap: 10px 18px;
+      font-size: 0.98rem; line-height: 1.9;
+    }
+
+    /* add a subtle dot between items on larger screens */
+    #skills .skill-line li {
+      position: relative;
+      white-space: nowrap;
+    }
+    #skills .skill-line li + li::before {
+      content: "•";
+      position: absolute;
+      left: -12px;
+      color: #9aa4b2;
+    }
+
+    /* Mobile tweaks — remove dot to save space */
+    @media (max-width: 576px) {
+      #skills .skill-line { gap: 8px 14px; font-size: 0.96rem; line-height: 1.8; }
+      #skills .skill-line li + li::before { content: ""; }
+    }
+
+    /* --- light mode --- */
+    #skills .section-title p { color: #1f2937; }            /* dark gray */
+    #skills .skills-cat { color: #1160d8; }
+    #skills .skill-line li { color: #374151; }              /* slate-700 */
+
+    /* --- dark mode override --- */
+    @media (prefers-color-scheme: dark) {
+      #skills .section-title p { color: #e5e7eb; }          /* light gray */
+      #skills .skills-cat { color: #60a5fa; }               /* bright blue heading */
+      #skills .skill-line li { color: #f3f4f6; }            /* whiteish text */
+      #skills .skill-line li + li::before { color: #9ca3af; } /* separator dot */
+    }
+    #skills-title {
+      color: #000;
+      border-bottom: 3px solid #1160d8;
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #skills-title {
+        color: #fff;
+        border-bottom-color: #60a5fa; /* lighter blue accent */
+      }
+    }
+    /* Add spacing inside the Skills section */
+    #skills .container {
+      max-width: 1100px;   /* keeps content nicely centered */
+      margin: 0 auto;
+      padding: 0 40px;     /* adds left-right spacing */
+    }
+
+    @media (max-width: 768px) {
+      #skills .container {
+        padding: 0 20px;   /* smaller padding for mobile */
+      }
+    }
+    /* About section spacing & readability */
+    #about .container,
+    #about .section-title {
+      max-width: 1100px;   /* keep content centered like Skills */
+      margin: 0 auto;
+      padding: 0 40px;     /* left-right breathing room */
+    }
+
+    #about .section-title h2 { margin-bottom: 10px; }
+    #about .section-title p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #1f2937;      /* light mode text */
+    }
+
+    @media (max-width: 768px) {
+      #about .container,
+      #about .section-title { padding: 0 20px; }
+      #about .section-title p { font-size: 1rem; line-height: 1.7; }
+    }
+
+    /* Dark mode text color for About */
+    @media (prefers-color-scheme: dark) {
+      #about .section-title p { color: #18191c; }
+    }
+
+    /* =========================
+   OPEN SOURCE SECTION STYLING
+   ========================= */
+    #opensource.section-alt {
+      background: linear-gradient(180deg, #f8fafc 0%, #f5f7fb 100%);
+      border-top: 1px solid rgba(0,0,0,.06);
+      border-bottom: 1px solid rgba(0,0,0,.06);
+      padding: 60px 0;
+    }
+
+    /* Keep the container aligned with other sections */
+    #opensource .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    @media (max-width: 768px) {
+      #opensource .container {
+        padding: 0 20px;
+      }
+    }
+
+    /* Section header */
+    #opensource .section-title {
+      text-align: left;
+      margin-bottom: 16px;
+    }
+    #opensource .section-title h2 {
+      color: #000;
+      border-bottom: 3px solid #1160d8;
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+    #opensource .section-title p {
+      margin-top: 6px;
+      color: #374151;
+      opacity: 0.9;
+      font-size: 0.98rem;
+    }
+
+    /* Card grid layout */
+    .open-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    /* Individual open-source cards */
+    .open-card {
+      background: #fff;
+      border: 1px solid #e7e7e9;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.04);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .open-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,.08);
+    }
+
+    /* Header layout */
+    .open-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    /* Titles and text */
+    .open-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #111;
+      margin: 0;
+    }
+    .open-desc {
+      color: #444;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    /* Tech tags styling (same as project section) */
+    .tech-tiles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .tech-tile {
+      font-size: 0.78rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #f0f2f5;
+      border: 1px solid #e6e8ec;
+    }
+
+    /* Dark mode styles */
+    @media (prefers-color-scheme: dark) {
+      #opensource.section-alt {
+        background: linear-gradient(180deg, #0b1220 0%, #0e1526 100%);
+        border-top-color: rgba(255,255,255,.06);
+        border-bottom-color: rgba(255,255,255,.06);
+      }
+
+      #opensource .section-title h2 {
+        color: #fff;
+        border-bottom-color: #60a5fa;
+      }
+      #opensource .section-title p {
+        color: #d1d5db;
+      }
+
+      .open-card {
+        background: #111827;
+        border-color: #1f2937;
+        color: #e5e7eb;
+        box-shadow: 0 2px 6px rgba(0,0,0,.5);
+      }
+      .open-title {
+        color: #fff;
+      }
+      .open-desc {
+        color: #e5e7eb;
+      }
+      .tech-tile {
+        background: #1f2937;
+        color: #18191c;
+        border-color: #374151;
+      }
+    }
+
+    /* Add hover accent for GitHub icon */
+    #opensource .bi-github {
+      font-size: 1.2rem;
+      color: #1160d8;
+      transition: color 0.3s ease;
+    }
+    @media (prefers-color-scheme: dark) {
+      #opensource .bi-github { color: #60a5fa; }
+    }
+    #opensource .bi-github:hover {
+      color: #0ea5e9;
+    }
+
+    /* Add consistent spacing for Professional Affiliations */
+    #professionalAffliations .container {
+      max-width: 1100px;   /* keeps it centered */
+      margin: 0 auto;
+      padding: 0 40px;     /* left & right space */
+    }
+
+    @media (max-width: 768px) {
+      #professionalAffliations .container {
+        padding: 0 20px;   /* smaller padding on mobile */
+      }
+    }
+
+    /* Optional: add vertical breathing room for section */
+    #professionalAffliations.section {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
+    /* Align logos and text consistently */
+    #professionalAffliations .title {
+      font-weight: 600;
+      text-align: center;
+      color: #1f2a44;
+    }
+
+    #professionalAffliations img {
+      display: block;
+      margin: 0 auto 12px auto;
+      border-radius: 8px;
+    }
+
+    /* Dark mode tweaks */
+    @media (prefers-color-scheme: dark) {
+      #professionalAffliations .title { color: #18191c; }
+    }
+
+    /* Dark background variant */
+    .section-dark {
+      background: linear-gradient(180deg, #0b1220 0%, #0e1526 100%);
+      color: #fff;
+      text-align: left;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .section-dark h2 {
+      color: #fff;
+      border-bottom: 3px solid #18191c;
+      display: inline-block;
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+    }
+
+    /* Fix padding inside testimonial cards */
+    .section-dark .testimonial-item {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 5px 20px; /* adds breathing room */
+      color: #e5e7eb;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Fix the white tooltip bubble style */
+    .section-dark .testimonial-item {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 20px 16px;
+      color: #18191c;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+      /* Center content vertically and horizontally */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      /* Optional: fix consistent height */
+      min-height: 280px;
+    }
+
+
+    /* add the small triangle below the tooltip */
+    .section-dark .testimonial-item p::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 8px 8px 0 8px;
+      border-style: solid;
+      border-color: #ffffff transparent transparent transparent;
+    }
+
+    /* spacing for the image and heading below */
+    .section-dark .testimonial-item img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 12px auto 6px;
+      display: block;
+      background: #fff;
+      padding: 5px;
+    }
+
+    .section-dark .testimonial-item h3 {
+      margin-top: 6px;
+      color: #f3f4f6; /* lighter text under dark bg */
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    /* overall layout padding for the dark section */
+    .section-dark .container {
+      padding: 0 40px; /* adds left and right space */
+    }
+
+    @media (max-width: 768px) {
+      .section-dark .container {
+        padding: 0 20px;
+      }
+      .section-dark .testimonial-item {
+        padding: 24px 16px;
+      }
+    }
+
+    /* Contact Section */
+    #contact .container {
+      max-width: 1100px;      /* keeps consistent width with other sections */
+      margin: 0 auto;
+      padding: 0 40px;        /* left and right padding */
+    }
+
+    @media (max-width: 768px) {
+      #contact .container {
+        padding: 0 20px;      /* smaller padding for mobile */
+      }
+    }
+
+    /* Section title */
+    #contact .section-title {
+      text-align: left;
+      margin-bottom: 24px;
+    }
+
+    /* Info section styling */
+    #contact .info-wrap {
+      background: #f9fafb;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    #contact .info-item {
+      margin-bottom: 16px;
+    }
+
+    #contact .info-item i {
+      font-size: 24px;
+      color: #1160d8;
+      margin-right: 12px;
+    }
+
+    #contact .info-item h3 {
+      margin-bottom: 6px;
+      font-size: 1.1rem;
+      color: #1f2937;
+    }
+
+    #contact .info-item p {
+      font-size: 0.95rem;
+      color: #4b5563;
+      margin: 0;
+    }
+
+    /* Map iframe styling */
+    #contact iframe {
+      border-radius: 10px;
+      width: 100%;
+      height: 270px;
+    }
+
+    /* Google Form embed */
+    #contact .col-lg-7 iframe {
+      width: 100%;
+      height: 600px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    /* Dark mode adjustment */
+    @media (prefers-color-scheme: dark) {
+      #contact .info-wrap {
+        background: #111827;
+        box-shadow: 0 4px 10px rgba(255,255,255,0.05);
+      }
+      #contact .info-item h3,
+      #contact .info-item p {
+        color: #e5e7eb;
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </style>
 
 </head>
 
 <body class="index-page">
+<!-- GHC badge -->
+<div class="ghc-banner" aria-hidden="true">🌸 Attending Grace Hopper Celebration 2025</div>
 
-  <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+<header id="header" class="header dark-background d-flex flex-column">
+  <!-- Mobile Toggle Icon -->
+  <i class="header-toggle d-xl-none bi bi-list"></i>
 
-    <div class="profile-img">
-      <img src="assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
-    </div>
+  <!-- Profile/Logo Section -->
+  <h1 class="divProper">JMV</h1>
 
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
-      <h1 class="sitename">Junie Mariam Varghese</h1>
+  <!-- Social Links -->
+  <div class="social-links text-center">
+    <a href="https://x.com/JunieVarghese" class="twitter" aria-label="Twitter">
+      <i class="bi bi-twitter-x"></i>
     </a>
+    <a href="https://github.com/juniemariam" class="github" aria-label="GitHub">
+      <i class="bi bi-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/junie-mariam-varghese/" class="linkedin" aria-label="LinkedIn">
+      <i class="bi bi-linkedin"></i>
+    </a>
+  </div>
 
-    <div class="social-links text-center">
-      <a href="https://x.com/JunieVarghese" class="twitter"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://github.com/juniemariam" class="github"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/junie-mariam-varghese/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+  <!-- Navigation Menu -->
+  <nav id="navmenu" class="navmenu">
+    <ul>
+      <li><a href="#home" class="active"><i class="bi bi-house navicon"></i> Home</a></li>
+      <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+      <!-- <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li> -->
+      <li><a href="#skills"><i class="bi bi-tools navicon"></i> Skills</a></li>
+      <li><a href="#projects"><i class="bi bi-images navicon"></i> Projects</a></li>
 
-    </div>
+      <!-- ✅ NEW Open Source Section -->
+      <li><a href="#opensource"><i class="bi bi-git navicon"></i> Open Source</a></li>
 
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="#home" class="active"><i class="bi bi-house navicon"></i> Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-<!--         <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li> -->
-        <li><a href="#skills"><i class="bi bi-tools navicon"></i> Skills</a></li>
-        <li><a href="#projects"><i class="bi bi-images navicon"></i> Projects</a></li> 
-        <li><a href="#professionalAffliations"><i class="bi bi-hdd-stack navicon"></i> Professional Affiliations</a></li>
-        <li><a href="#CertificatesAndRecognitions"><i class="bx bx-award"></i>  Certificates & Recognitions </a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-      </ul>
-    </nav>
+      <li><a href="#professionalAffliations"><i class="bi bi-hdd-stack navicon"></i> Professional Affiliations</a></li>
+      <li><a href="#CertificatesAndRecognitions"><i class="bi bi-award navicon"></i> Certificates & Recognitions</a></li>
+      <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+    </ul>
+  </nav>
 
-  </header>
+</header>
 
-  <main class="main">
+
+<main class="main">
 
     <!-- Home Section -->
     <section id="home" class="hero section dark-background">
 
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="">
+       <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h1><strong>Junie Mariam Varghese</strong></h1>
-        <p>I'm <span class="typed" data-typed-items="Graduate Student, Cloud - Software Engineer, AI Enthusiast"></span><span
-            class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span
-            class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+
+        <!-- tagline badges -->
+
+
+        <!-- animated typing text -->
+        <p>
+          <span class="typed" data-typed-items="Software Engineering,Cloud Computing,Applied AI/ML"></span>
+        </p>
+
+        <div class="tagline">
+          <span class="tag-badge"><i class="bi bi-briefcase"></i> Open to Full-time SWE, Cloud, & AI/ML Roles</span>
+          <span class="tag-badge"><i class="bi bi-calendar-event"></i> Graduating May 2026</span>
+        </div>
+
       </div>
 
     </section><!-- /Hero Section -->
 
-    <!-- About Section -->
-    <section id="about" class="about section">
+  <!-- About Section -->
+  <section id="about" class="about section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p style="text-align: justify;">Hi, I’m Junie! 👋
-          I’m a Software Engineer with a passion for solving real-world problems through technology.
-          I’m currently pursuing my master’s in Software Engineering at San Jose State University, specializing in Mobile and Cloud Computing.
-          My background also includes a master’s in Artificial Intelligence and Machine Learning, which has fueled my excitement for innovation and creative tech solutions.
-          With experience working at Philips Healthcare, I’ve been part of projects that make a real impact—and this is where my love for technology truly deepened.
-          I thrive on challenges, love learning new technologies, and am always looking for ways to make a difference through my work.
-          I’m currently on the lookout for exciting opportunities in<b>  Software Engineering, Full Stack Development, Cloud and Machine Learning, especially fall 2025 internships and Full time opportunities </b>, where I can bring my skills and passion for tech to a forward-thinking team. Let’s build something great together! 🤝✨</p>
-
-        </div><!-- End Section Title -->
-
-    </section><!-- /About Section -->
-
-    <!-- Skills Section -->
-<section id="skills" class="skills section light-background">
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-
-
-  <div class="container">
-
+    <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
-      <h2>Skills</h2>
+      <h2>About</h2>
+      <p style="text-align: justify;">
+      Hi, I’m Junie Mariam Varghese 👋
+      I’m a graduate student in Software Engineering at San José State University, specializing in mobile and cloud computing.
+      I currently work as a research assistant, exploring how software, cloud, and AI can come together to build intelligent, scalable systems.
+
+      With over three years of experience at Philips Healthcare, I’ve contributed to projects that strengthened my passion for creating technology that makes a real impact.
+      My previous master’s in Artificial Intelligence and Machine Learning shaped my mindset for innovation, blending analytical thinking with creative problem-solving.
+
+      Beyond academics and industry, I enjoy contributing to open-source projects, collaborating with diverse teams, and building solutions that make technology more accessible and meaningful.
+    </p>
+
+
+    </div><!-- End Section Title -->
+
+  </section><!-- /About Section -->
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills section section-alt" aria-labelledby="skills-title">
+    <div class="container section-title" data-aos="fade-up">
+      <h2 id="skills-title">Skills</h2>
     </div>
 
-    <div class="row skills-content">
-      <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
-        <h3 style="color:#149ddd;"><strong>Programming Languages</strong></h3>
-        <br>
-        <div class="row g-3">
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
-            <div class="count-box" style="text-align: center; display: inline-block;">
-              <i class="bx bxl-python bx-lg"></i>
-
-              <p><strong>Python</strong> </p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
-            <div class="count-box" style="text-align: center; display: inline-block;">
-              <i class="bx bxl-c-plus-plus bx-lg"></i>
-
-              <p><strong style="align-content: center;display: block;">C++</strong> </p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
-            <div class="count-box" style="text-align: center; display: inline-block;">
-              <i class="bx bxl-javascript bx-lg"></i>
-
-              <p><strong style="align-content: center;display: block;">JS</strong> </p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
-            <div class="count-box" style="text-align: center; display: inline-block;">
-              <img src="assets/img/r-project.svg"
-                style="height: 3rem; width: 3rem; font-weight: 400; display: inline-block; line-height: 1;">
-
-              <p><strong style="align-content: center;display: block;">R</strong> </p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
-            <div class="count-box" style="text-align: center; display: inline-block;">
-              <i class="bx bxl-typescript bx-lg"></i>
-
-              <p><strong style="align-content: center;display: block;">TS</strong> </p>
-            </div>
-          </div>
-
-<!--           <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
-            <div class="count-box" style="text-align: center; display: inline-block;">
-              <i class="bx bxl-go-lang bx-lg"></i>
-
-              <p><strong style="align-content: center;display: block;">GO</strong> </p>
-            </div>
-          </div> -->
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
-            <div class="count-box" style="text-align: center; display: inline-block;">
-              <img src="assets/img/sql.png"
-                style="height: 2.5rem; width: 2.5rem; font-weight: 400; display: inline-block; line-height: 1;">
-
-              <p><strong style="align-content: center;display: block;">SQL</strong> </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="row skills-content">
-        <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
-        </br>
-          <h3 style="color:#149ddd;"><Strong>Web Technologies</Strong></h3>
-          <br>
-          <div class="row no-gutters">
-
-            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
-              <div class="count-box">
-                <i class="bx bxl-angular bx-lg"></i>
-
-                <p><strong>Angular</strong> </p>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
-              <div class="count-box">
-                <i class="bx bxl-react bx-lg"></i>
-
-                <p><strong>ReactJS</strong> </p>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
-              <div class="count-box">
-                <i class="bx bxl-nodejs bx-lg"></i>
-
-                <p><strong>Node.js</strong> </p>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
-              <div class="count-box">
-                <img src="https://www.djangoproject.com/m/img/logos/django-logo-negative.svg" alt="Django Logo" style="height: 3rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 1;">
-
-
-                <p><strong>Django</strong> </p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-
-      <div class="row skills-content">
-        <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
-        </br>
-          <h3 style="color:#149ddd;"><strong>Frameworks</strong></h3>
-          <br>
-          <div class="row no-gutters">
-
-            <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
-              <div class="count-box" style="text-align: center; display: inline-block;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Hadoop_logo.svg"
-                  style="height: 3rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 1;">
-
-                <p><strong style="align-content: center;display: block;">Hadoop</strong> </p>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
-              <div class="count-box" style="text-align: center; display: inline-block;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg"
-                  alt="Apache Spark"
-                  style="height: 3.5rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 1;">
-
-                <p><strong style="align-content: center;display: block;">Spark</strong> </p>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
-              <div class="count-box" style="text-align: center; display: inline-block;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png"
-                  style="height: 2rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 2;">
-
-                <p><strong style="align-content: center;display: block;">Pytorch</strong> </p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
-              <div class="count-box" style="text-align: center; display: inline-block;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Keras_logo.svg"
-                  style="height: 3.5rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 1;">
-
-                <p><strong style="align-content: center;display: block;">Keras</strong> </p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
-              <div class="count-box" style="text-align: center; display: inline-block;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg"
-                  style="height: 3.5rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 1;">
-
-                <p><strong style="align-content: center;display: block;">Tensorflow</strong> </p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate" data-aos="fade-up">
-              <div class="count-box" style="text-align: center; display: inline-block;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
-                  style="height: 3.5rem; width: 5rem; font-weight: 400; display: inline-block; line-height: 1;">
-
-                <p><strong style="align-content: center;display: block;">Sklearn</strong> </p>
-              </div>
-            </div>
-
-
-
-
-          </div>
-        </div>
-        <div class="row skills-content">
-
-          <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
-          </br>
-            <h3 style="color:#149ddd;"><strong>Cloud</strong></h3>
-            <br>
-            <div class="row no-gutters">
-
-              <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
-                data-aos="fade-up">
-                <div class="count-box">
-                  <center>
-                    <i class="bx bxl-aws bx-lg"></i>
-
-
-                    <p><strong>Amazon Web Services</strong> </p>
-                  </center>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
-                data-aos="fade-up">
-                <div class="count-box">
-                  <center><i class="bx bxl-google-cloud bx-lg"></i></center>
-
-
-                  <p><strong>Google Cloud</strong> </p>
-                </div>
-              </div>
-            </div>
-
-
-
-          </div>
-        </div>
-        <div class="row skills-content">
-          <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
-          </br>
-            <h3 style="color:#149ddd;"><strong>Databases</strong></h3>
-            <br>
-            <div class="row no-gutters">
-
-              <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
-                data-aos="fade-up">
-                <div class="count-box" style="text-align: center; display: inline-block;">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/MySQL_textlogo.svg"
-                    style="height: 3rem; width: 6rem; font-weight: 400; display: inline-block; line-height: 1;">
-
-                  <p><strong style="align-content: center;display: block;">MySQL</strong> </p>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
-                data-aos="fade-up">
-                <div class="count-box" style="text-align: center; display: inline-block;">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg"
-                    style="height: 3rem; width: 6rem; font-weight: 400; display: inline-block; line-height: 1;">
-
-                  <p><strong style="align-content: center;display: block;">MongoDB</strong> </p>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
-                data-aos="fade-up">
-                <div class="count-box" style="text-align: center; display: inline-block;">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg"
-                    style="height: 3rem; width: 6rem; font-weight: 400; display: inline-block; line-height: 1;">
-
-                  <p><strong style="align-content: center;display: block;">PostgreSQL</strong> </p>
-                </div>
-              </div>
-
-
-
-
-
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
-            </br>
-              <h3 style="color:#149ddd;"><strong>Tools</strong></h3>
-              <br>
-              <div class="row no-gutters">
-
-                <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
-                  data-aos="fade-up">
-                  <div class="count-box">
-                    <i class="bx bxl-docker bx-lg"></i>
-
-                    <p><strong>Docker</strong> </p>
-                  </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
-                  data-aos="fade-up">
-                  <div class="count-box">
-                    <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins Logo" width="40" />
-                    <center>
-                      <p><strong>Jenkins</strong> </p>
-                    </center>
-
-                  </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
-                  data-aos="fade-up">
-                  <div class="count-box">
-                    <i class="bx bxl-git bx-lg"></i>
-                    <center>
-                      <p><strong>Git</strong> </p>
-                    </center>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-
-
-        </div>
-      </div>
-
-
+    <div class="container" data-aos="fade-up" data-aos-delay="80">
+      <!-- Languages & Frameworks -->
+      <h4 class="skills-cat">Languages & Frameworks</h4>
+      <ul class="skill-line">
+        <li>Python</li>
+        <li>Go</li>
+        <li>C++</li>
+        <li>JavaScript</li>
+        <li>TypeScript</li>
+        <li>Angular</li>
+        <li>React</li>
+        <li>FastAPI</li>
+        <li>Django</li>
+        <li>Flask</li>
+      </ul>
+
+      <!-- AI/ML & MLOps -->
+      <h4 class="skills-cat">AI/ML & MLOps</h4>
+      <ul class="skill-line">
+        <li>PyTorch</li>
+        <li>Scikit-learn</li>
+        <li>Hugging Face</li>
+        <li>TensorRT</li>
+        <li>Triton</li>
+        <li>ONNX</li>
+        <li>Kubeflow</li>
+        <li>MLflow</li>
+        <li>DVC</li>
+        <li>LangChain</li>
+        <li>FAISS</li>
+        <li>LoRA</li>
+        <li>XGBoost</li>
+        <li>SVM</li>
+        <li>Random Forest</li>
+      </ul>
+
+      <!-- Cloud & DevOps -->
+      <h4 class="skills-cat">Cloud & DevOps</h4>
+      <ul class="skill-line">
+        <li>AWS (EC2, S3, IAM, RDS, CloudWatch, SNS)</li>
+        <li>GCP (GKE, Cloud Run, Vertex AI)</li>
+        <li>Docker</li>
+        <li>Kubernetes</li>
+        <li>Terraform</li>
+        <li>CI/CD (Jenkins, GitHub Actions)</li>
+        <li>OAuth 2.0 / MFA</li>
+        <li>Agile / REST API Design</li>
+      </ul>
+
+      <!-- Data & Tools -->
+      <h4 class="skills-cat">Data & Tools</h4>
+      <ul class="skill-line">
+        <li>Pandas</li>
+        <li>NumPy</li>
+        <li>SQL / NoSQL</li>
+        <li>Git</li>
+        <li>Figma</li>
+        <li>Visual Studio</li>
+      </ul>
     </div>
-
-  </div>
-
+  </section>
 
 
-
-</section><!-- /Skills Section -->
-
-
-    <!-- Minimal styles for clean, uniform cards (no images) -->
+  <!-- Minimal styles for clean, uniform cards (no images) -->
 <style>
   .project-grid {
     display: grid;
@@ -473,6 +820,21 @@
   }
   .project-links { margin-top:auto; display:flex; gap:12px; align-items:center; }
   .project-links a { text-decoration:none; }
+
+  /* Project section spacing */
+  #projects .container {
+    max-width: 1100px;   /* keeps content aligned with other sections */
+    margin: 0 auto;
+    padding: 0 40px;     /* adds horizontal space */
+  }
+
+  @media (max-width: 768px) {
+    #projects .container {
+      padding: 0 20px;   /* tighter spacing for mobile */
+    }
+  }
+
+
 </style>
 
 <!-- Projects Section (thumbnail-free, HTML-only) -->
@@ -483,24 +845,6 @@
 
   <div class="container">
     <div class="project-grid" data-aos="fade-up" data-aos-delay="100">
-
-      <!-- KT-Assistant -->
-      <article class="project-card">
-        <div class="project-header">
-          <h4 class="project-title">KT-Assistant (RAG + Agents)</h4>
-          <a href="https://github.com/juniemariam/KT-Assistant" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
-        </div>
-        <p class="project-blurb">Enterprise-ready RAG assistant that streamlines onboarding and boosts developer productivity by unifying code, docs, Slack, and Confluence into one interface.</p>
-        <div class="tech-tiles">
-          <span class="tech-tile">Python</span><span class="tech-tile">FastAPI</span><span class="tech-tile">LangChain</span>
-          <span class="tech-tile">SBERT</span><span class="tech-tile">FAISS</span><span class="tech-tile">Streamlit</span>
-          <span class="tech-tile">GCP</span><span class="tech-tile">GKE</span><span class="tech-tile">Docker</span><span class="tech-tile">Kubernetes</span>
-          <span class="tech-tile">Slack API</span><span class="tech-tile">Confluence API</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/juniemariam/KT-Assistant" target="_blank">View on GitHub →</a>
-        </div>
-      </article>
 
       <!-- Ecommerce Website -->
       <article class="project-card">
@@ -518,6 +862,27 @@
         </div>
       </article>
 
+      <!-- Restaurant Reservation Platform -->
+      <article class="project-card">
+        <div class="project-header">
+          <h4 class="project-title">Restaurant Reservation Platform</h4>
+          <a href="https://github.com/juniemariam/team-project-2024849-sprinters" target="_blank" aria-label="GitHub">
+            <i class="bi bi-github"></i>
+          </a>
+        </div>
+        <p class="project-blurb">
+          A role-based restaurant reservation system inspired by OpenTable. Deployed on GCP with React, Flask, and PostgreSQL, offering JWT-secured APIs, admin approvals, and a streamlined booking experience. Enhanced query performance by 20% through GCP Cloud SQL optimization.
+        </p>
+        <div class="tech-tiles">
+          <span class="tech-tile">React</span><span class="tech-tile">Redux</span>
+          <span class="tech-tile">Flask</span><span class="tech-tile">PostgreSQL</span>
+          <span class="tech-tile">SQLAlchemy</span><span class="tech-tile">GCP</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/juniemariam/team-project-2024849-sprinters" target="_blank">View on GitHub →</a>
+        </div>
+      </article>
+
       <!-- Recarnation -->
       <article class="project-card">
         <div class="project-header">
@@ -532,22 +897,6 @@
         </div>
         <div class="project-links">
           <a href="https://github.com/juniemariam/Recarnation-NanoClouds" target="_blank">View on GitHub →</a>
-        </div>
-      </article>
-
-      <!-- SyncWell -->
-      <article class="project-card">
-        <div class="project-header">
-          <h4 class="project-title">SyncWell: RAG App</h4>
-          <a href="https://github.com/juniemariam/SyncWell" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
-        </div>
-        <p class="project-blurb">A wellness-focused Android app that uses RAG-powered AI to deliver personalized, cycle-aware health, diet, and self-care recommendations for women.</p>
-        <div class="tech-tiles">
-          <span class="tech-tile">Java</span><span class="tech-tile">Jetpack Compose</span><span class="tech-tile">Gemini API</span>
-          <span class="tech-tile">Sentence Transformer</span><span class="tech-tile">Chroma DB</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/juniemariam/SyncWell" target="_blank">View on GitHub →</a>
         </div>
       </article>
 
@@ -570,21 +919,6 @@
         </div>
       </article>
 
-      <!-- Dementia Detection -->
-      <article class="project-card">
-        <div class="project-header">
-          <h4 class="project-title">Dementia Detection</h4>
-          <a href="https://github.com/juniemariam/DementiaDetection" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
-        </div>
-        <p class="project-blurb">A machine learning model for early-stage dementia detection using MRI scans and clinical features, achieving up to 80% accuracy with SVM, Random Forest, and XGBoost.</p>
-
-        <div class="tech-tiles">
-          <span class="tech-tile">Python</span><span class="tech-tile">Scikit-Learn</span><span class="tech-tile">Pandas</span><span class="tech-tile">NumPy</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/juniemariam/DementiaDetection" target="_blank">View on GitHub →</a>
-        </div>
-      </article>
 
       <!-- AWS Solutions Architect Prep -->
       <article class="project-card">
@@ -602,6 +936,84 @@
         </div>
       </article>
 
+      <!-- SyncWell -->
+      <article class="project-card">
+        <div class="project-header">
+          <h4 class="project-title">SyncWell: RAG App</h4>
+          <a href="https://github.com/juniemariam/SyncWell" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        </div>
+        <p class="project-blurb">A wellness-focused Android app that uses RAG-powered AI to deliver personalized, cycle-aware health, diet, and self-care recommendations for women.</p>
+        <div class="tech-tiles">
+          <span class="tech-tile">Java</span><span class="tech-tile">Jetpack Compose</span><span class="tech-tile">Gemini API</span>
+          <span class="tech-tile">Sentence Transformer</span><span class="tech-tile">Chroma DB</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/juniemariam/SyncWell" target="_blank">View on GitHub →</a>
+        </div>
+      </article>
+
+      <!-- KT-Assistant -->
+      <article class="project-card">
+        <div class="project-header">
+          <h4 class="project-title">KT-Assistant (RAG + Agents)</h4>
+          <a href="https://github.com/juniemariam/KT-Assistant" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        </div>
+        <p class="project-blurb">Enterprise-ready RAG assistant that streamlines onboarding and boosts developer productivity by unifying code, docs, Slack, and Confluence into one interface.</p>
+        <div class="tech-tiles">
+          <span class="tech-tile">Python</span><span class="tech-tile">FastAPI</span><span class="tech-tile">LangChain</span>
+          <span class="tech-tile">SBERT</span><span class="tech-tile">FAISS</span><span class="tech-tile">Streamlit</span>
+          <span class="tech-tile">GCP</span><span class="tech-tile">GKE</span><span class="tech-tile">Docker</span><span class="tech-tile">Kubernetes</span>
+          <span class="tech-tile">Slack API</span><span class="tech-tile">Confluence API</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/juniemariam/KT-Assistant" target="_blank">View on GitHub →</a>
+        </div>
+      </article>
+      <!-- Fairness-Aware Style Recommendation -->
+      <article class="project-card">
+        <div class="project-header">
+          <h4 class="project-title">Fairness-Aware Style Recommendation</h4>
+          <a href="https://github.com/juniemariam/Fairness-Aware-Style-Recommendation" target="_blank" aria-label="GitHub">
+            <i class="bi bi-github"></i>
+          </a>
+        </div>
+        <p class="project-blurb">
+          A fairness-driven recommendation pipeline using CLIP embeddings and user history to rank fashion items. Enhanced style diversity while maintaining accuracy.
+        </p>
+        <div class="tech-tiles">
+          <span class="tech-tile">Python</span><span class="tech-tile">PyTorch</span>
+          <span class="tech-tile">Scikit-learn</span><span class="tech-tile">FAISS</span>
+          <span class="tech-tile">CLIP</span><span class="tech-tile">XGBoost</span>
+          <span class="tech-tile">Matplotlib</span><span class="tech-tile">Plotly</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/juniemariam/Fairness-Aware-Style-Recommendation" target="_blank">View on GitHub →</a>
+        </div>
+      </article>
+
+      <!-- AI-Driven Real Estate Investment Advisor -->
+      <article class="project-card">
+        <div class="project-header">
+          <h4 class="project-title">AI-Driven Real Estate Investment Advisor</h4>
+          <a href="https://github.com/juniemariam/AI-Driven-Real-Estate-Investment-Advisor-Predicting-ROI-Price-Trends-Property-Desirability" target="_blank" aria-label="GitHub">
+          <i class="bi bi-github"></i>
+          </a>
+        </div>
+        <p class="project-blurb">
+          A data-driven ML system that predicts ROI, house prices, and property desirability using Fractal Clustering, Muller Loop Refinement, and SHAP Explainability.
+          Identifies profitable properties, maximizing investor returns.
+        </p>
+        <div class="tech-tiles">
+          <span class="tech-tile">Python</span><span class="tech-tile">Pandas</span>
+          <span class="tech-tile">Scikit-learn</span><span class="tech-tile">SHAP</span>
+          <span class="tech-tile">Fractal Clustering</span><span class="tech-tile">Google Colab</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/juniemariam/AI-Driven-Real-Estate-Investment-Advisor-Predicting-ROI-Price-Trends-Property-Desirability" target="_blank">View on GitHub →</a>
+          <a href="https://colab.research.google.com/drive/13pt5pRu2Qpr8nFTnTPaBnfTW3RwmazEY#scrollTo=SuJfCyID2Vlw" target="_blank">Open in Colab →</a>
+        </div>
+      </article>
+
     </div>
 
     <div style="text-align:center; margin-top:24px;">
@@ -612,12 +1024,62 @@
 </section>
 
 
-    <!-- Certification Section -->
+  <!-- Open Source Section -->
+  <section id="opensource" class="opensource section section-alt" aria-labelledby="opensource-title">
+    <div class="container section-title" data-aos="fade-up">
+      <h2 id="opensource-title">Open Source Contributions</h2>
+      <p>Actively contributing to large-scale open-source projects in MLOps, cloud systems, and AI research — focusing on scalability, reproducibility, and reliability.</p>
+    </div>
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="open-grid">
+
+        <!-- Kubeflow Contribution -->
+        <article class="open-card">
+          <div class="open-header">
+            <h4 class="open-title">Kubeflow Trainer Operator</h4>
+            <a href="https://github.com/kubeflow/training-operator/pull/2767" target="_blank" aria-label="GitHub">
+              <i class="bi bi-github"></i>
+            </a>
+          </div>
+          <p class="open-desc">
+            Implemented RFC 1035–compliant TrainJob name validation using CEL rules and integration tests in Go, improving Kubernetes training job reliability and preventing invalid deployments.
+          </p>
+          <div class="tech-tiles">
+            <span class="tech-tile">Go</span><span class="tech-tile">Kubernetes</span>
+            <span class="tech-tile">Kubeflow</span><span class="tech-tile">CEL</span>
+          </div>
+        </article>
+
+        <!-- Kustomize Manifest Fix -->
+        <article class="open-card">
+          <div class="open-header">
+            <h4 class="open-title">Kubeflow Kustomize Manifest Updates</h4>
+            <a href="https://github.com/kubeflow/model-registry/pull/1198" target="_blank" aria-label="GitHub">
+              <i class="bi bi-github"></i>
+            </a>
+          </div>
+          <p class="open-desc">
+            Resolved YAML and MySQL compatibility issues in Kubeflow manifests, enhancing portability and deployment stability across cloud environments for enterprise users.
+          </p>
+          <div class="tech-tiles">
+            <span class="tech-tile">YAML</span><span class="tech-tile">MySQL</span>
+            <span class="tech-tile">Kustomize</span><span class="tech-tile">CNCF</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Certification Section -->
     <section id="professionalAffliations" class="certificate section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>PROFESSIONAL AFFILIATIONS</h2>
+        <h2>Professional Affliations</h2>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -649,141 +1111,126 @@
 
       </div>
 
-    </section><!-- /Services Section -->
+    </section>
 
-    <!-- Testimonials Section -->
-    <section id="CertificatesAndRecognitions" class="testimonials section light-background">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Certificates and Recognitions</h2>
-      </div><!-- End Section Title -->
+  <!-- Certificates & Recognitions Section -->
+  <section id="CertificatesAndRecognitions" class="testimonials section section-dark" aria-labelledby="certificates-title">
+    <div class="container section-title" data-aos="fade-up">
+      <h2 id="certificates-title">Certificates & Recognitions</h2>
+    </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 1,
-                  "spaceBetween": 40
-                },
-                "1200": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 1
-                }
-              }
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            "autoplay": { "delay": 5000 },
+            "slidesPerView": "auto",
+            "pagination": {
+              "el": ".swiper-pagination",
+              "type": "bullets",
+              "clickable": true
+            },
+            "breakpoints": {
+              "320": { "slidesPerView": 1, "spaceBetween": 40 },
+              "1200": { "slidesPerView": 3, "spaceBetween": 20 }
             }
-          </script>
-          <div class="swiper-wrapper">
+          }
+        </script>
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <span>DevOps Essentials</span> 
-                </p>
-                <img src="assets/img/testimonials/google.jpg" class="testimonial-img" alt="">
-                <h3>Google</h3>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <span>Fundamentals of Deep Learning for Computer Vision</span>
-                </p>
-                <img src="assets/img/testimonials/Nvidia.jpg" class="testimonial-img" alt="">
-                <h3>Nvidia</h3>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <span>Introduction to Data Science and Methodologies</span>
-                </p>
-                <img src="assets/img/testimonials/ibm.png" class="testimonial-img" alt="">
-                <h3>IBM</h3>
-
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <span>AI From the Data Center to the Edge – An Optimized Path Using Intel® Architecture</span>
-                </p>
-                <img src="assets/img/testimonials/intel.png" class="testimonial-img" alt="">
-                <h3>Intel</h3>
-
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <span>Introduction to Embedded Machine Learning</span>
-                </p>
-                <img src="assets/img/testimonials/edgeimpulse.png" class="testimonial-img" alt="">
-                <h3>Edge Impulse</h3>
-
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <span>AI for Medical Diagnosis</span>
-                </p>
-                <img src="assets/img/testimonials/dl.png" class="testimonial-img" alt="">
-                <h3>DeepLearning.AI</h3>
-
-              </div>
-            </div><!-- End testimonial item -->
-
+        <div class="swiper-wrapper">
+          <!-- Google -->
           <div class="swiper-slide">
             <div class="testimonial-item">
-              <p>
-                <span>Fundamentals of Reinforcement Learning</span>
-              </p>
-              <img src="assets/img/testimonials/univ.png" class="testimonial-img" alt="">
-              <h3>University Of Alberta</h3>
-
+              <p><span>DevOps Essentials</span></p>
+              <img src="assets/img/testimonials/google.jpg" class="testimonial-img" alt="">
+              <h3>Google</h3>
             </div>
-          </div><!-- End testimonial item -->
+          </div>
 
+          <!-- Hackathon Winner -->
           <div class="swiper-slide">
             <div class="testimonial-item">
-              <p>
-                <span>Spot Award for taking ownership VS2022 migration at train level</span>
-              </p>
+              <p><span>Winner (Best Use of Wiz) – AWS MCP Enterprise Agents Hackathon</span></p>
+              <img src="assets/img/testimonials/aws.png" class="testimonial-img" alt="">
+              <h3>AWS Bedrock | Wiz | MongoDB </h3>
+            </div>
+          </div>
+
+
+          <!-- Nvidia -->
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p><span>Fundamentals of Deep Learning for Computer Vision</span></p>
+              <img src="assets/img/testimonials/Nvidia.jpg" class="testimonial-img" alt="">
+              <h3>NVIDIA</h3>
+            </div>
+          </div>
+
+          <!-- IBM -->
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p><span>Introduction to Data Science and Methodologies</span></p>
+              <img src="assets/img/testimonials/ibm.png" class="testimonial-img" alt="">
+              <h3>IBM</h3>
+            </div>
+          </div>
+
+          <!-- Intel -->
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p><span>AI From the Data Center to the Edge – Optimized Path Using Intel® Architecture</span></p>
+              <img src="assets/img/testimonials/intel.png" class="testimonial-img" alt="">
+              <h3>Intel</h3>
+            </div>
+          </div>
+
+          <!-- Edge Impulse -->
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p><span>Introduction to Embedded Machine Learning</span></p>
+              <img src="assets/img/testimonials/edgeimpulse.png" class="testimonial-img" alt="">
+              <h3>Edge Impulse</h3>
+            </div>
+          </div>
+
+          <!-- DeepLearning.AI -->
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p><span>AI for Medical Diagnosis</span></p>
+              <img src="assets/img/testimonials/dl.png" class="testimonial-img" alt="">
+              <h3>DeepLearning.AI</h3>
+            </div>
+          </div>
+
+          <!-- University of Alberta -->
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p><span>Fundamentals of Reinforcement Learning</span></p>
+              <img src="assets/img/testimonials/univ.png" class="testimonial-img" alt="">
+              <h3>University of Alberta</h3>
+            </div>
+          </div>
+
+          <!-- Philips -->
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p><span>Spot Award for Ownership – Visual Studio 2022 Migration</span></p>
               <img src="assets/img/testimonials/philips.jpeg" class="testimonial-img" alt="">
               <h3>Philips</h3>
-
             </div>
-          </div><!-- End testimonial item -->
-
           </div>
-          <div class="swiper-pagination"></div>
         </div>
 
+        <div class="swiper-pagination"></div>
       </div>
+    </div>
+  </section>
 
-    </section><!-- /Testimonials Section -->
 
-    <!-- Contact Section -->
+  <!-- Contact Section -->
     <section id="contact" class="contact section">
 
       <!-- Section Title -->
@@ -792,6 +1239,1327 @@
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+          <meta charset="utf-8">
+          <meta content="width=device-width, initial-scale=1.0" name="viewport">
+          <title>Junies Portfolio</title>
+          <meta content="" name="description">
+          <meta content="" name="keywords">
+
+          <!-- Favicons -->
+          <link href="assets/img/favicon.png" rel="icon">
+          <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+          <!-- Fonts -->
+          <link href="https://fonts.googleapis.com" rel="preconnect">
+          <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+          <link
+                  href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+                  rel="stylesheet">
+
+          <!-- Vendor CSS Files -->
+          <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+          <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+          <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+          <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+          <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+          <!-- Main CSS File -->
+          <link href="assets/css/main.css" rel="stylesheet">
+          <style>
+            /* Style for the audio player */
+            .audio-player {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 24px;
+              cursor: pointer;
+            }
+
+            .audio-icon {
+              font-size: 40px;
+              color: #007bff;
+              cursor: pointer;
+              transition: color 0.3s;
+            }
+
+            .audio-icon:hover {
+              color: #0056b3;
+            }
+
+            /* Make Hero Section smaller */
+            #home.hero {
+              min-height: 75vh; /* reduced height from near full screen (100vh) */
+              padding: 80px 0; /* adjust spacing */
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+            }
+
+            #home h1 {
+              font-size: 4rem; /* smaller name */
+            }
+            #home::before {
+              content: "";
+              position: absolute;
+              inset: 0;
+              background: rgba(0, 0, 0, 0.25); /* soft dark overlay */
+              z-index: 0;
+            }
+            #home .container {
+              position: relative;
+              z-index: 1;
+            }
+
+
+            #home p {
+              font-size: 3rem;
+              margin-top: 10px;
+            }
+
+            /* GHC badge */
+            .ghc-banner { position:fixed; top:20px; right:16px; background:darkgoldenrod; color:black; padding:8px 14px; border-radius:999px; font-weight:600; box-shadow:0 6px 18px rgba(20,157,221,0.18); z-index:998; }
+
+
+            .divProper {
+              font-size: 1.8rem;
+              font-weight: 700;
+              text-align: center;
+              margin: 1rem 0;
+              border-radius:10px;
+
+            }
+
+            .social-links a {
+              font-size: 1.2rem;
+              margin: 0 5px;
+              color: #fff;
+              transition: color 0.3s;
+            }
+
+            .social-links a:hover {
+              color: #149ddd;
+            }
+
+            /* tagline styling */
+            .tagline {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 10px;
+              margin: 12px 0;
+            }
+
+            .tag-badge {
+              background: linear-gradient(90deg, #f0f7ff, #fff6fb);
+              color: #1f2a44;
+              font-weight: 600;
+              font-size: 0.95rem;
+              padding: 6px 14px;
+              border-radius: 25px;
+              box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+              display: inline-flex;
+              align-items: center;
+              gap: 6px;
+            }
+
+            .tag-badge i {
+              font-size: 1rem;
+              color: #149ddd;
+            }
+
+            /* responsive size adjustments */
+            @media (max-width: 576px) {
+              .tag-badge {
+                font-size: 0.85rem;
+                padding: 5px 10px;
+              }
+            }
+
+            /* Alt background to partition the section (light theme) */
+            .section.section-alt {
+              background: linear-gradient(180deg, #f8fafc 0%, #f5f7fb 100%);
+              border-top: 1px solid rgba(0,0,0,.06);
+              border-bottom: 1px solid rgba(0,0,0,.06);
+            }
+
+            /* Dark mode friendly */
+            @media (prefers-color-scheme: dark) {
+              .section.section-alt {
+                background: linear-gradient(180deg, #0b1220 0%, #0e1526 100%);
+                border-top-color: rgba(255,255,255,.06);
+                border-bottom-color: rgba(255,255,255,.06);
+              }
+            }
+
+            /* Keep visual hierarchy consistent with About */
+            #skills .section-title { margin-bottom: 10px; }
+            #skills .section-title p { margin-top: 6px; opacity: .85; }
+
+            /* Category headings */
+            #skills .skills-cat {
+              margin: 22px 0 8px;
+              color: #1160d8;
+              font-weight: 700;
+              letter-spacing: .2px;
+            }
+
+            /* Inline list with separators — simple, scannable */
+            #skills .skill-line {
+              list-style: none;
+              padding: 0; margin: 0 0 14px 0;
+              display: flex; flex-wrap: wrap; gap: 10px 18px;
+              font-size: 0.98rem; line-height: 1.9;
+            }
+
+            /* add a subtle dot between items on larger screens */
+            #skills .skill-line li {
+              position: relative;
+              white-space: nowrap;
+            }
+            #skills .skill-line li + li::before {
+              content: "•";
+              position: absolute;
+              left: -12px;
+              color: #9aa4b2;
+            }
+
+            /* Mobile tweaks — remove dot to save space */
+            @media (max-width: 576px) {
+              #skills .skill-line { gap: 8px 14px; font-size: 0.96rem; line-height: 1.8; }
+              #skills .skill-line li + li::before { content: ""; }
+            }
+
+            /* --- light mode --- */
+            #skills .section-title p { color: #1f2937; }            /* dark gray */
+            #skills .skills-cat { color: #1160d8; }
+            #skills .skill-line li { color: #374151; }              /* slate-700 */
+
+            /* --- dark mode override --- */
+            @media (prefers-color-scheme: dark) {
+              #skills .section-title p { color: #e5e7eb; }          /* light gray */
+              #skills .skills-cat { color: #60a5fa; }               /* bright blue heading */
+              #skills .skill-line li { color: #f3f4f6; }            /* whiteish text */
+              #skills .skill-line li + li::before { color: #9ca3af; } /* separator dot */
+            }
+            #skills-title {
+              color: #000;
+              border-bottom: 3px solid #1160d8;
+              display: inline-block;
+              padding-bottom: 4px;
+            }
+
+            @media (prefers-color-scheme: dark) {
+              #skills-title {
+                color: #fff;
+                border-bottom-color: #60a5fa; /* lighter blue accent */
+              }
+            }
+            /* Add spacing inside the Skills section */
+            #skills .container {
+              max-width: 1100px;   /* keeps content nicely centered */
+              margin: 0 auto;
+              padding: 0 40px;     /* adds left-right spacing */
+            }
+
+            @media (max-width: 768px) {
+              #skills .container {
+                padding: 0 20px;   /* smaller padding for mobile */
+              }
+            }
+            /* About section spacing & readability */
+            #about .container,
+            #about .section-title {
+              max-width: 1100px;   /* keep content centered like Skills */
+              margin: 0 auto;
+              padding: 0 40px;     /* left-right breathing room */
+            }
+
+            #about .section-title h2 { margin-bottom: 10px; }
+            #about .section-title p {
+              font-size: 1.05rem;
+              line-height: 1.8;
+              color: #1f2937;      /* light mode text */
+            }
+
+            @media (max-width: 768px) {
+              #about .container,
+              #about .section-title { padding: 0 20px; }
+              #about .section-title p { font-size: 1rem; line-height: 1.7; }
+            }
+
+            /* Dark mode text color for About */
+            @media (prefers-color-scheme: dark) {
+              #about .section-title p { color: #18191c; }
+            }
+
+            /* =========================
+           OPEN SOURCE SECTION STYLING
+           ========================= */
+            #opensource.section-alt {
+              background: linear-gradient(180deg, #f8fafc 0%, #f5f7fb 100%);
+              border-top: 1px solid rgba(0,0,0,.06);
+              border-bottom: 1px solid rgba(0,0,0,.06);
+              padding: 60px 0;
+            }
+
+            /* Keep the container aligned with other sections */
+            #opensource .container {
+              max-width: 1100px;
+              margin: 0 auto;
+              padding: 0 40px;
+            }
+            @media (max-width: 768px) {
+              #opensource .container {
+                padding: 0 20px;
+              }
+            }
+
+            /* Section header */
+            #opensource .section-title {
+              text-align: left;
+              margin-bottom: 16px;
+            }
+            #opensource .section-title h2 {
+              color: #000;
+              border-bottom: 3px solid #1160d8;
+              display: inline-block;
+              padding-bottom: 4px;
+            }
+            #opensource .section-title p {
+              margin-top: 6px;
+              color: #374151;
+              opacity: 0.9;
+              font-size: 0.98rem;
+            }
+
+            /* Card grid layout */
+            .open-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+              gap: 16px;
+            }
+
+            /* Individual open-source cards */
+            .open-card {
+              background: #fff;
+              border: 1px solid #e7e7e9;
+              border-radius: 14px;
+              padding: 18px;
+              box-shadow: 0 4px 12px rgba(0,0,0,.04);
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              transition: transform .2s ease, box-shadow .2s ease;
+            }
+
+            .open-card:hover {
+              transform: translateY(-2px);
+              box-shadow: 0 6px 18px rgba(0,0,0,.08);
+            }
+
+            /* Header layout */
+            .open-header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 8px;
+            }
+
+            /* Titles and text */
+            .open-title {
+              font-size: 1.05rem;
+              font-weight: 700;
+              color: #111;
+              margin: 0;
+            }
+            .open-desc {
+              color: #444;
+              font-size: 0.95rem;
+              margin-bottom: 10px;
+              line-height: 1.6;
+            }
+
+            /* Tech tags styling (same as project section) */
+            .tech-tiles {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 6px;
+            }
+            .tech-tile {
+              font-size: 0.78rem;
+              padding: 4px 8px;
+              border-radius: 999px;
+              background: #f0f2f5;
+              border: 1px solid #e6e8ec;
+            }
+
+            /* Dark mode styles */
+            @media (prefers-color-scheme: dark) {
+              #opensource.section-alt {
+                background: linear-gradient(180deg, #0b1220 0%, #0e1526 100%);
+                border-top-color: rgba(255,255,255,.06);
+                border-bottom-color: rgba(255,255,255,.06);
+              }
+
+              #opensource .section-title h2 {
+                color: #fff;
+                border-bottom-color: #60a5fa;
+              }
+              #opensource .section-title p {
+                color: #d1d5db;
+              }
+
+              .open-card {
+                background: #111827;
+                border-color: #1f2937;
+                color: #e5e7eb;
+                box-shadow: 0 2px 6px rgba(0,0,0,.5);
+              }
+              .open-title {
+                color: #fff;
+              }
+              .open-desc {
+                color: #e5e7eb;
+              }
+              .tech-tile {
+                background: #1f2937;
+                color: #18191c;
+                border-color: #374151;
+              }
+            }
+
+            /* Add hover accent for GitHub icon */
+            #opensource .bi-github {
+              font-size: 1.2rem;
+              color: #1160d8;
+              transition: color 0.3s ease;
+            }
+            @media (prefers-color-scheme: dark) {
+              #opensource .bi-github { color: #60a5fa; }
+            }
+            #opensource .bi-github:hover {
+              color: #0ea5e9;
+            }
+
+            /* Add consistent spacing for Professional Affiliations */
+            #professionalAffliations .container {
+              max-width: 1100px;   /* keeps it centered */
+              margin: 0 auto;
+              padding: 0 40px;     /* left & right space */
+            }
+
+            @media (max-width: 768px) {
+              #professionalAffliations .container {
+                padding: 0 20px;   /* smaller padding on mobile */
+              }
+            }
+
+            /* Optional: add vertical breathing room for section */
+            #professionalAffliations.section {
+              padding-top: 60px;
+              padding-bottom: 60px;
+            }
+
+            /* Align logos and text consistently */
+            #professionalAffliations .title {
+              font-weight: 600;
+              text-align: center;
+              color: #1f2a44;
+            }
+
+            #professionalAffliations img {
+              display: block;
+              margin: 0 auto 12px auto;
+              border-radius: 8px;
+            }
+
+            /* Dark mode tweaks */
+            @media (prefers-color-scheme: dark) {
+              #professionalAffliations .title { color: #18191c; }
+            }
+
+            /* Dark background variant */
+            .section-dark {
+              background: linear-gradient(180deg, #0b1220 0%, #0e1526 100%);
+              color: #fff;
+              text-align: left;
+              border-top: 1px solid rgba(255,255,255,0.08);
+              border-bottom: 1px solid rgba(255,255,255,0.08);
+            }
+
+            .section-dark h2 {
+              color: #fff;
+              border-bottom: 3px solid #18191c;
+              display: inline-block;
+              padding-bottom: 6px;
+              margin-bottom: 16px;
+            }
+
+            /* Fix padding inside testimonial cards */
+            .section-dark .testimonial-item {
+              background: rgba(255, 255, 255, 0.05);
+              border-radius: 16px;
+              padding: 5px 20px; /* adds breathing room */
+              color: #e5e7eb;
+              text-align: center;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            }
+
+            /* Fix the white tooltip bubble style */
+            .section-dark .testimonial-item {
+              background: rgba(255, 255, 255, 0.05);
+              border-radius: 16px;
+              padding: 20px 16px;
+              color: #18191c;
+              text-align: center;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+              /* Center content vertically and horizontally */
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+
+              /* Optional: fix consistent height */
+              min-height: 280px;
+            }
+
+
+            /* add the small triangle below the tooltip */
+            .section-dark .testimonial-item p::after {
+              content: "";
+              position: absolute;
+              bottom: -8px;
+              left: 50%;
+              transform: translateX(-50%);
+              border-width: 8px 8px 0 8px;
+              border-style: solid;
+              border-color: #ffffff transparent transparent transparent;
+            }
+
+            /* spacing for the image and heading below */
+            .section-dark .testimonial-item img {
+              width: 80px;
+              height: 80px;
+              border-radius: 50%;
+              margin: 12px auto 6px;
+              display: block;
+              background: #fff;
+              padding: 5px;
+            }
+
+            .section-dark .testimonial-item h3 {
+              margin-top: 6px;
+              color: #f3f4f6; /* lighter text under dark bg */
+              font-weight: 600;
+              font-size: 1rem;
+            }
+
+            /* overall layout padding for the dark section */
+            .section-dark .container {
+              padding: 0 40px; /* adds left and right space */
+            }
+
+            @media (max-width: 768px) {
+              .section-dark .container {
+                padding: 0 20px;
+              }
+              .section-dark .testimonial-item {
+                padding: 24px 16px;
+              }
+            }
+
+            /* Contact Section */
+            #contact .container {
+              max-width: 1100px;      /* keeps consistent width with other sections */
+              margin: 0 auto;
+              padding: 0 40px;        /* left and right padding */
+            }
+
+            @media (max-width: 768px) {
+              #contact .container {
+                padding: 0 20px;      /* smaller padding for mobile */
+              }
+            }
+
+            /* Section title */
+            #contact .section-title {
+              text-align: left;
+              margin-bottom: 24px;
+            }
+
+            /* Info section styling */
+            #contact .info-wrap {
+              background: #f9fafb;
+              padding: 20px;
+              border-radius: 12px;
+              box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            }
+
+            #contact .info-item {
+              margin-bottom: 16px;
+            }
+
+            #contact .info-item i {
+              font-size: 24px;
+              color: #1160d8;
+              margin-right: 12px;
+            }
+
+            #contact .info-item h3 {
+              margin-bottom: 6px;
+              font-size: 1.1rem;
+              color: #1f2937;
+            }
+
+            #contact .info-item p {
+              font-size: 0.95rem;
+              color: #4b5563;
+              margin: 0;
+            }
+
+            /* Map iframe styling */
+            #contact iframe {
+              border-radius: 10px;
+              width: 100%;
+              height: 270px;
+            }
+
+            /* Google Form embed */
+            #contact .col-lg-7 iframe {
+              width: 100%;
+              height: 600px;
+              border-radius: 10px;
+              box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+
+            /* Dark mode adjustment */
+            @media (prefers-color-scheme: dark) {
+              #contact .info-wrap {
+                background: #111827;
+                box-shadow: 0 4px 10px rgba(255,255,255,0.05);
+              }
+              #contact .info-item h3,
+              #contact .info-item p {
+                color: #e5e7eb;
+              }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </style>
+
+        </head>
+
+        <body class="index-page">
+        <!-- GHC badge -->
+        <div class="ghc-banner" aria-hidden="true">🌸 Attending Grace Hopper Celebration 2025</div>
+
+        <header id="header" class="header dark-background d-flex flex-column">
+          <!-- Mobile Toggle Icon -->
+          <i class="header-toggle d-xl-none bi bi-list"></i>
+
+          <!-- Profile/Logo Section -->
+          <h1 class="divProper">JMV</h1>
+
+          <!-- Social Links -->
+          <div class="social-links text-center">
+            <a href="https://x.com/JunieVarghese" class="twitter" aria-label="Twitter">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://github.com/juniemariam" class="github" aria-label="GitHub">
+              <i class="bi bi-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/junie-mariam-varghese/" class="linkedin" aria-label="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+
+          <!-- Navigation Menu -->
+          <nav id="navmenu" class="navmenu">
+            <ul>
+              <li><a href="#home" class="active"><i class="bi bi-house navicon"></i> Home</a></li>
+              <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+              <!-- <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li> -->
+              <li><a href="#skills"><i class="bi bi-tools navicon"></i> Skills</a></li>
+              <li><a href="#projects"><i class="bi bi-images navicon"></i> Projects</a></li>
+
+              <!-- ✅ NEW Open Source Section -->
+              <li><a href="#opensource"><i class="bi bi-git navicon"></i> Open Source</a></li>
+
+              <li><a href="#professionalAffliations"><i class="bi bi-hdd-stack navicon"></i> Professional Affiliations</a></li>
+              <li><a href="#CertificatesAndRecognitions"><i class="bi bi-award navicon"></i> Certificates & Recognitions</a></li>
+              <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+            </ul>
+          </nav>
+
+        </header>
+
+
+        <main class="main">
+
+          <!-- Home Section -->
+          <section id="home" class="hero section dark-background">
+
+            <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="">
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+              <h1><strong>Junie Mariam Varghese</strong></h1>
+
+              <!-- tagline badges -->
+
+
+              <!-- animated typing text -->
+              <p>
+                <span class="typed" data-typed-items="Software Engineering,Cloud Computing,Applied AI/ML"></span>
+              </p>
+
+              <div class="tagline">
+                <span class="tag-badge"><i class="bi bi-briefcase"></i> Open to Full-time SWE, Cloud, & AI/ML Roles</span>
+                <span class="tag-badge"><i class="bi bi-calendar-event"></i> Graduating May 2026</span>
+              </div>
+
+            </div>
+
+          </section><!-- /Hero Section -->
+
+          <!-- About Section -->
+          <section id="about" class="about section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+              <h2>About</h2>
+              <p style="text-align: justify;">
+                Hi, I’m Junie Mariam Varghese 👋
+                I’m a graduate student in Software Engineering at San José State University, specializing in mobile and cloud computing.
+                I currently work as a research assistant, exploring how software, cloud, and AI can come together to build intelligent, scalable systems.
+
+                With over three years of experience at Philips Healthcare, I’ve contributed to projects that strengthened my passion for creating technology that makes a real impact.
+                My previous master’s in Artificial Intelligence and Machine Learning shaped my mindset for innovation, blending analytical thinking with creative problem-solving.
+
+                Beyond academics and industry, I enjoy contributing to open-source projects, collaborating with diverse teams, and building solutions that make technology more accessible and meaningful.
+              </p>
+
+
+            </div><!-- End Section Title -->
+
+          </section><!-- /About Section -->
+
+          <!-- SKILLS -->
+          <section id="skills" class="skills section section-alt" aria-labelledby="skills-title">
+            <div class="container section-title" data-aos="fade-up">
+              <h2 id="skills-title">Skills</h2>
+            </div>
+
+            <div class="container" data-aos="fade-up" data-aos-delay="80">
+              <!-- Languages & Frameworks -->
+              <h4 class="skills-cat">Languages & Frameworks</h4>
+              <ul class="skill-line">
+                <li>Python</li>
+                <li>Go</li>
+                <li>C++</li>
+                <li>JavaScript</li>
+                <li>TypeScript</li>
+                <li>Angular</li>
+                <li>React</li>
+                <li>FastAPI</li>
+                <li>Django</li>
+                <li>Flask</li>
+              </ul>
+
+              <!-- AI/ML & MLOps -->
+              <h4 class="skills-cat">AI/ML & MLOps</h4>
+              <ul class="skill-line">
+                <li>PyTorch</li>
+                <li>Scikit-learn</li>
+                <li>Hugging Face</li>
+                <li>TensorRT</li>
+                <li>Triton</li>
+                <li>ONNX</li>
+                <li>Kubeflow</li>
+                <li>MLflow</li>
+                <li>DVC</li>
+                <li>LangChain</li>
+                <li>FAISS</li>
+                <li>LoRA</li>
+                <li>XGBoost</li>
+                <li>SVM</li>
+                <li>Random Forest</li>
+              </ul>
+
+              <!-- Cloud & DevOps -->
+              <h4 class="skills-cat">Cloud & DevOps</h4>
+              <ul class="skill-line">
+                <li>AWS (EC2, S3, IAM, RDS, CloudWatch, SNS)</li>
+                <li>GCP (GKE, Cloud Run, Vertex AI)</li>
+                <li>Docker</li>
+                <li>Kubernetes</li>
+                <li>Terraform</li>
+                <li>CI/CD (Jenkins, GitHub Actions)</li>
+                <li>OAuth 2.0 / MFA</li>
+                <li>Agile / REST API Design</li>
+              </ul>
+
+              <!-- Data & Tools -->
+              <h4 class="skills-cat">Data & Tools</h4>
+              <ul class="skill-line">
+                <li>Pandas</li>
+                <li>NumPy</li>
+                <li>SQL / NoSQL</li>
+                <li>Git</li>
+                <li>Figma</li>
+                <li>Visual Studio</li>
+              </ul>
+            </div>
+          </section>
+
+
+          <!-- Minimal styles for clean, uniform cards (no images) -->
+          <style>
+            .project-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+              gap: 16px;
+            }
+            .project-card {
+              background: #fff;
+              border: 1px solid #e7e7e9;
+              border-radius: 16px;
+              padding: 16px;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              box-shadow: 0 4px 12px rgba(0,0,0,.04);
+            }
+            .project-header {
+              display:flex; justify-content:space-between; align-items:center; gap:10px;
+            }
+            .project-title { font-size: 1.05rem; font-weight: 700; margin: 0; }
+            .project-blurb { color:#555; font-size:.95rem; margin:8px 0 10px; }
+            .tech-tiles { display:flex; flex-wrap:wrap; gap:6px; margin-top: 4px; }
+            .tech-tile {
+              font-size:.78rem; padding:4px 8px; border-radius:999px;
+              background:#f0f2f5; border:1px solid #e6e8ec;
+            }
+            .project-links { margin-top:auto; display:flex; gap:12px; align-items:center; }
+            .project-links a { text-decoration:none; }
+
+            /* Project section spacing */
+            #projects .container {
+              max-width: 1100px;   /* keeps content aligned with other sections */
+              margin: 0 auto;
+              padding: 0 40px;     /* adds horizontal space */
+            }
+
+            @media (max-width: 768px) {
+              #projects .container {
+                padding: 0 20px;   /* tighter spacing for mobile */
+              }
+            }
+
+
+          </style>
+
+          <!-- Projects Section (thumbnail-free, HTML-only) -->
+          <section id="projects" class="projects section light-background">
+            <div class="container section-title" data-aos="fade-up">
+              <h2>Projects</h2>
+            </div>
+
+            <div class="container">
+              <div class="project-grid" data-aos="fade-up" data-aos-delay="100">
+
+                <!-- Ecommerce Website -->
+                <article class="project-card">
+                  <div class="project-header">
+                    <h4 class="project-title">Ecommerce Website</h4>
+                    <a href="https://github.com/juniemariam/ECommerceWebApp" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                  </div>
+                  <p class="project-blurb">A robust Django-based eCommerce platform with user accounts, product catalog, cart, checkout, and payment integration for a seamless shopping experience.</p>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">Python</span><span class="tech-tile">Django</span><span class="tech-tile">AWS</span>
+                    <span class="tech-tile">RDS PostgreSQL</span><span class="tech-tile">Terraform</span>
+                  </div>
+                  <div class="project-links">
+                    <a href="https://github.com/juniemariam/ECommerceWebApp" target="_blank">View on GitHub →</a>
+                  </div>
+                </article>
+
+                <!-- Restaurant Reservation Platform -->
+                <article class="project-card">
+                  <div class="project-header">
+                    <h4 class="project-title">Restaurant Reservation Platform</h4>
+                    <a href="https://github.com/juniemariam/team-project-2024849-sprinters" target="_blank" aria-label="GitHub">
+                      <i class="bi bi-github"></i>
+                    </a>
+                  </div>
+                  <p class="project-blurb">
+                    A role-based restaurant reservation system inspired by OpenTable. Deployed on GCP with React, Flask, and PostgreSQL, offering JWT-secured APIs, admin approvals, and a streamlined booking experience. Enhanced query performance by 20% through GCP Cloud SQL optimization.
+                  </p>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">React</span><span class="tech-tile">Redux</span>
+                    <span class="tech-tile">Flask</span><span class="tech-tile">PostgreSQL</span>
+                    <span class="tech-tile">SQLAlchemy</span><span class="tech-tile">GCP</span>
+                  </div>
+                  <div class="project-links">
+                    <a href="https://github.com/juniemariam/team-project-2024849-sprinters" target="_blank">View on GitHub →</a>
+                  </div>
+                </article>
+
+                <!-- Recarnation -->
+                <article class="project-card">
+                  <div class="project-header">
+                    <h4 class="project-title">Recarnation</h4>
+                    <a href="https://github.com/juniemariam/Recarnation-NanoClouds" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                  </div>
+                  <p class="project-blurb">A cloud-hosted platform for buying and selling pre-owned cars, featuring secure login, advanced search and filters, admin approvals, and an ML-powered price predictor for fair valuations.</p>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">AWS</span><span class="tech-tile">Terraform</span><span class="tech-tile">Django</span>
+                    <span class="tech-tile">PostgreSQL</span><span class="tech-tile">Jenkins</span><span class="tech-tile">Docker</span>
+                    <span class="tech-tile">Okta SSO</span><span class="tech-tile">XGBoost</span>
+                  </div>
+                  <div class="project-links">
+                    <a href="https://github.com/juniemariam/Recarnation-NanoClouds" target="_blank">View on GitHub →</a>
+                  </div>
+                </article>
+
+                <!-- Shopping Spree -->
+                <article class="project-card">
+                  <div class="project-header">
+                    <h4 class="project-title">Shopping Spree</h4>
+                    <span>
+            <a href="https://github.com/juniemariam/ShoppingSpree" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="https://www.ijeat.org/wp-content/uploads/papers/v8i6/F8120088619.pdf" target="_blank" aria-label="Paper" style="margin-left:8px;"><i class="bi bi-journal-text"></i></a>
+          </span>
+                  </div>
+                  <p class="project-blurb">An ML-powered shopping app with personalized product recommendations, behavior-driven insights, and a responsive interface for an engaging online experience.</p>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">ReactJS</span><span class="tech-tile">Node.js</span><span class="tech-tile">Firebase</span>
+                    <span class="tech-tile">ML</span><span class="tech-tile">Heroku</span>
+                  </div>
+                  <div class="project-links">
+                    <a href="https://github.com/juniemariam/ShoppingSpree" target="_blank">View on GitHub →</a>
+                  </div>
+                </article>
+
+
+                <!-- AWS Solutions Architect Prep -->
+                <article class="project-card">
+                  <div class="project-header">
+                    <h4 class="project-title">AWS Solutions Architect Prep</h4>
+                    <a href="https://github.com/juniemariam/Aws-Certified-Solutions-Architect" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                  </div>
+                  <p class="project-blurb">A collection of Terraform configurations exploring AWS services, built to practice cloud infrastructure management and prepare for the AWS Solutions Architect certification.</p>
+
+                  <div class="tech-tiles">
+                    <span class="tech-tile">AWS</span><span class="tech-tile">Terraform</span>
+                  </div>
+                  <div class="project-links">
+                    <a href="https://github.com/juniemariam/Aws-Certified-Solutions-Architect" target="_blank">View on GitHub →</a>
+                  </div>
+                </article>
+
+                <!-- SyncWell -->
+                <article class="project-card">
+                  <div class="project-header">
+                    <h4 class="project-title">SyncWell: RAG App</h4>
+                    <a href="https://github.com/juniemariam/SyncWell" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                  </div>
+                  <p class="project-blurb">A wellness-focused Android app that uses RAG-powered AI to deliver personalized, cycle-aware health, diet, and self-care recommendations for women.</p>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">Java</span><span class="tech-tile">Jetpack Compose</span><span class="tech-tile">Gemini API</span>
+                    <span class="tech-tile">Sentence Transformer</span><span class="tech-tile">Chroma DB</span>
+                  </div>
+                  <div class="project-links">
+                    <a href="https://github.com/juniemariam/SyncWell" target="_blank">View on GitHub →</a>
+                  </div>
+                </article>
+
+                <!-- KT-Assistant -->
+                <article class="project-card">
+                  <div class="project-header">
+                    <h4 class="project-title">KT-Assistant (RAG + Agents)</h4>
+                    <a href="https://github.com/juniemariam/KT-Assistant" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                  </div>
+                  <p class="project-blurb">Enterprise-ready RAG assistant that streamlines onboarding and boosts developer productivity by unifying code, docs, Slack, and Confluence into one interface.</p>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">Python</span><span class="tech-tile">FastAPI</span><span class="tech-tile">LangChain</span>
+                    <span class="tech-tile">SBERT</span><span class="tech-tile">FAISS</span><span class="tech-tile">Streamlit</span>
+                    <span class="tech-tile">GCP</span><span class="tech-tile">GKE</span><span class="tech-tile">Docker</span><span class="tech-tile">Kubernetes</span>
+                    <span class="tech-tile">Slack API</span><span class="tech-tile">Confluence API</span>
+                  </div>
+                  <div class="project-links">
+                    <a href="https://github.com/juniemariam/KT-Assistant" target="_blank">View on GitHub →</a>
+                  </div>
+                </article>
+                <!-- Fairness-Aware Style Recommendation -->
+                <article class="project-card">
+                  <div class="project-header">
+                    <h4 class="project-title">Fairness-Aware Style Recommendation</h4>
+                    <a href="https://github.com/juniemariam/Fairness-Aware-Style-Recommendation" target="_blank" aria-label="GitHub">
+                      <i class="bi bi-github"></i>
+                    </a>
+                  </div>
+                  <p class="project-blurb">
+                    A fairness-driven recommendation pipeline using CLIP embeddings and user history to rank fashion items. Enhanced style diversity while maintaining accuracy.
+                  </p>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">Python</span><span class="tech-tile">PyTorch</span>
+                    <span class="tech-tile">Scikit-learn</span><span class="tech-tile">FAISS</span>
+                    <span class="tech-tile">CLIP</span><span class="tech-tile">XGBoost</span>
+                    <span class="tech-tile">Matplotlib</span><span class="tech-tile">Plotly</span>
+                  </div>
+                  <div class="project-links">
+                    <a href="https://github.com/juniemariam/Fairness-Aware-Style-Recommendation" target="_blank">View on GitHub →</a>
+                  </div>
+                </article>
+
+                <!-- AI-Driven Real Estate Investment Advisor -->
+                <article class="project-card">
+                  <div class="project-header">
+                    <h4 class="project-title">AI-Driven Real Estate Investment Advisor</h4>
+                    <a href="https://github.com/juniemariam/AI-Driven-Real-Estate-Investment-Advisor-Predicting-ROI-Price-Trends-Property-Desirability" target="_blank" aria-label="GitHub">
+                      <i class="bi bi-github"></i>
+                    </a>
+                  </div>
+                  <p class="project-blurb">
+                    A data-driven ML system that predicts ROI, house prices, and property desirability using Fractal Clustering, Muller Loop Refinement, and SHAP Explainability.
+                    Identifies profitable properties, maximizing investor returns.
+                  </p>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">Python</span><span class="tech-tile">Pandas</span>
+                    <span class="tech-tile">Scikit-learn</span><span class="tech-tile">SHAP</span>
+                    <span class="tech-tile">Fractal Clustering</span><span class="tech-tile">Google Colab</span>
+                  </div>
+                  <div class="project-links">
+                    <a href="https://github.com/juniemariam/AI-Driven-Real-Estate-Investment-Advisor-Predicting-ROI-Price-Trends-Property-Desirability" target="_blank">View on GitHub →</a>
+                    <a href="https://colab.research.google.com/drive/13pt5pRu2Qpr8nFTnTPaBnfTW3RwmazEY#scrollTo=SuJfCyID2Vlw" target="_blank">Open in Colab →</a>
+                  </div>
+                </article>
+
+              </div>
+
+              <div style="text-align:center; margin-top:24px;">
+                <h3>View More Projects</h3>
+                <a href="https://github.com/juniemariam" target="_blank" style="text-decoration:none;">Check out my GitHub →</a>
+              </div>
+            </div>
+          </section>
+
+
+          <!-- Open Source Section -->
+          <section id="opensource" class="opensource section section-alt" aria-labelledby="opensource-title">
+            <div class="container section-title" data-aos="fade-up">
+              <h2 id="opensource-title">Open Source Contributions</h2>
+              <p>Actively contributing to large-scale open-source projects in MLOps, cloud systems, and AI research — focusing on scalability, reproducibility, and reliability.</p>
+            </div>
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+              <div class="open-grid">
+
+                <!-- Kubeflow Contribution -->
+                <article class="open-card">
+                  <div class="open-header">
+                    <h4 class="open-title">Kubeflow Trainer Operator</h4>
+                    <a href="https://github.com/kubeflow/training-operator/pull/2767" target="_blank" aria-label="GitHub">
+                      <i class="bi bi-github"></i>
+                    </a>
+                  </div>
+                  <p class="open-desc">
+                    Implemented RFC 1035–compliant TrainJob name validation using CEL rules and integration tests in Go, improving Kubernetes training job reliability and preventing invalid deployments.
+                  </p>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">Go</span><span class="tech-tile">Kubernetes</span>
+                    <span class="tech-tile">Kubeflow</span><span class="tech-tile">CEL</span>
+                  </div>
+                </article>
+
+                <!-- Kustomize Manifest Fix -->
+                <article class="open-card">
+                  <div class="open-header">
+                    <h4 class="open-title">Kubeflow Kustomize Manifest Updates</h4>
+                    <a href="https://github.com/kubeflow/model-registry/pull/1198" target="_blank" aria-label="GitHub">
+                      <i class="bi bi-github"></i>
+                    </a>
+                  </div>
+                  <p class="open-desc">
+                    Resolved YAML and MySQL compatibility issues in Kubeflow manifests, enhancing portability and deployment stability across cloud environments for enterprise users.
+                  </p>
+                  <div class="tech-tiles">
+                    <span class="tech-tile">YAML</span><span class="tech-tile">MySQL</span>
+                    <span class="tech-tile">Kustomize</span><span class="tech-tile">CNCF</span>
+                  </div>
+                </article>
+
+              </div>
+            </div>
+          </section>
+
+
+
+          <!-- Certification Section -->
+          <section id="professionalAffliations" class="certificate section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+              <h2>Professional Affliations</h2>
+            </div><!-- End Section Title -->
+
+            <div class="container">
+
+              <div class="row gy-4">
+
+                <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+                  <div>
+                    <img src="assets/img/codepath.jpg" alt="CodePath Logo" class="img-fluid" style="width: 100px; height: auto; margin-bottom: 10px;">
+                    <h4 class="title">CodePath</h4>
+                  </div>
+                </div>
+                <!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                  <div>
+                    <img src="assets/img/swe.png" alt="SWE Logo" class="img-fluid" style="width: 100px; height: auto; margin-bottom: 10px;">
+                    <h4 class="title">Society of Women Engineers</h4>
+                  </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                  <div>
+                    <img src="assets/img/RTC.jpg" alt="RTC Logo" class="img-fluid" style="width: 100px; height: auto; margin-bottom: 10px;">
+                    <h4 class="title">Rewriting the Code</h4>
+                  </div>
+                </div><!-- End Service Item -->
+              </div>
+
+            </div>
+
+          </section>
+
+
+          <!-- Certificates & Recognitions Section -->
+          <section id="CertificatesAndRecognitions" class="testimonials section section-dark" aria-labelledby="certificates-title">
+            <div class="container section-title" data-aos="fade-up">
+              <h2 id="certificates-title">Certificates & Recognitions</h2>
+            </div>
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+              <div class="swiper init-swiper">
+                <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true,
+                    "speed": 600,
+                    "autoplay": { "delay": 5000 },
+                    "slidesPerView": "auto",
+                    "pagination": {
+                      "el": ".swiper-pagination",
+                      "type": "bullets",
+                      "clickable": true
+                    },
+                    "breakpoints": {
+                      "320": { "slidesPerView": 1, "spaceBetween": 40 },
+                      "1200": { "slidesPerView": 3, "spaceBetween": 20 }
+                    }
+                  }
+                </script>
+
+                <div class="swiper-wrapper">
+                  <!-- Google -->
+                  <div class="swiper-slide">
+                    <div class="testimonial-item">
+                      <p><span>DevOps Essentials</span></p>
+                      <img src="assets/img/testimonials/google.jpg" class="testimonial-img" alt="">
+                      <h3>Google</h3>
+                    </div>
+                  </div>
+
+                  <!-- Hackathon Winner -->
+                  <div class="swiper-slide">
+                    <div class="testimonial-item">
+                      <p><span>Winner (Best Use of Wiz) – AWS MCP Enterprise Agents Hackathon</span></p>
+                      <img src="assets/img/testimonials/aws.png" class="testimonial-img" alt="">
+                      <h3>AWS Bedrock | Wiz | MongoDB </h3>
+                    </div>
+                  </div>
+
+
+                  <!-- Nvidia -->
+                  <div class="swiper-slide">
+                    <div class="testimonial-item">
+                      <p><span>Fundamentals of Deep Learning for Computer Vision</span></p>
+                      <img src="assets/img/testimonials/Nvidia.jpg" class="testimonial-img" alt="">
+                      <h3>NVIDIA</h3>
+                    </div>
+                  </div>
+
+                  <!-- IBM -->
+                  <div class="swiper-slide">
+                    <div class="testimonial-item">
+                      <p><span>Introduction to Data Science and Methodologies</span></p>
+                      <img src="assets/img/testimonials/ibm.png" class="testimonial-img" alt="">
+                      <h3>IBM</h3>
+                    </div>
+                  </div>
+
+                  <!-- Intel -->
+                  <div class="swiper-slide">
+                    <div class="testimonial-item">
+                      <p><span>AI From the Data Center to the Edge – Optimized Path Using Intel® Architecture</span></p>
+                      <img src="assets/img/testimonials/intel.png" class="testimonial-img" alt="">
+                      <h3>Intel</h3>
+                    </div>
+                  </div>
+
+                  <!-- Edge Impulse -->
+                  <div class="swiper-slide">
+                    <div class="testimonial-item">
+                      <p><span>Introduction to Embedded Machine Learning</span></p>
+                      <img src="assets/img/testimonials/edgeimpulse.png" class="testimonial-img" alt="">
+                      <h3>Edge Impulse</h3>
+                    </div>
+                  </div>
+
+                  <!-- DeepLearning.AI -->
+                  <div class="swiper-slide">
+                    <div class="testimonial-item">
+                      <p><span>AI for Medical Diagnosis</span></p>
+                      <img src="assets/img/testimonials/dl.png" class="testimonial-img" alt="">
+                      <h3>DeepLearning.AI</h3>
+                    </div>
+                  </div>
+
+                  <!-- University of Alberta -->
+                  <div class="swiper-slide">
+                    <div class="testimonial-item">
+                      <p><span>Fundamentals of Reinforcement Learning</span></p>
+                      <img src="assets/img/testimonials/univ.png" class="testimonial-img" alt="">
+                      <h3>University of Alberta</h3>
+                    </div>
+                  </div>
+
+                  <!-- Philips -->
+                  <div class="swiper-slide">
+                    <div class="testimonial-item">
+                      <p><span>Spot Award for Ownership – Visual Studio 2022 Migration</span></p>
+                      <img src="assets/img/testimonials/philips.jpeg" class="testimonial-img" alt="">
+                      <h3>Philips</h3>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </section>
+
+
+          <!-- Contact Section -->
+          <section id="contact" class="contact section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+              <h2>Contact</h2>
+            </div><!-- End Section Title -->
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+              <div class="row gy-4">
+
+                <div class="col-lg-5">
+
+                  <div class="info-wrap">
+                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                      <i class="bi bi-geo-alt flex-shrink-0"></i>
+                      <div>
+                        <h3>Address</h3>
+                        <p>San Jose, California, United States 95126</p>
+                      </div>
+                    </div><!-- End Info Item -->
+
+                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                      <i class="bi bi-envelope flex-shrink-0"></i>
+                      <div>
+                        <h3>Email</h3>
+                        <p>junie.mariamvarghese@sjsu.edu</p>
+                      </div>
+                    </div><!-- End Info Item -->
+
+                    <!-- Request Resume -->
+                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="600">
+                      <i class="bi bi-file-earmark-lock flex-shrink-0"></i>
+                      <div>
+                        <h3>Request Resume</h3>
+                        <p>
+                          Are you a recruiter or hiring manager? Please fill out this Google Form
+                          to receive a copy of my latest resume directly in your inbox.
+                        </p>
+                      </div>
+                    </div>
+
+
+                    <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
+                            frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                </div>
+
+                <div class="col-lg-7">
+                  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScS8vhpvlwYnB5oicgmJkF79hEGQeFQkdhvkxQub0rTcrX_6g/viewform?usp=dialog" width="800" height="900"></iframe>
+                </div><!-- End Contact Form -->
+
+              </div>
+
+            </div>
+
+          </section><!-- /Contact Section -->
+
+        </main>
+
+
+        <!-- Scroll Top -->
+        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+                class="bi bi-arrow-up-short"></i></a>
+
+        <!-- Preloader -->
+        <div id="preloader"></div>
+
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/typed.js/typed.umd.js"></script>
+        <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+        <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+        <!-- Main JS File -->
+        <script src="assets/js/main.js"></script>
+
+        </body>
+
+        </html>
 
         <div class="row gy-4">
 
@@ -814,6 +2582,19 @@
                 </div>
               </div><!-- End Info Item -->
 
+              <!-- Request Resume -->
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="600">
+                <i class="bi bi-file-earmark-lock flex-shrink-0"></i>
+                <div>
+                  <h3>Request Resume</h3>
+                  <p>
+                    Are you a recruiter or hiring manager? Please fill out this Google Form
+                    to receive a copy of my latest resume directly in your inbox.
+                  </p>
+                </div>
+              </div>
+
+
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
                 frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy"
@@ -822,7 +2603,7 @@
           </div>
 
           <div class="col-lg-7">
-            <iframe src="https://forms.gle/U66ipXKRw2wi1Ad29" width="800" height="900"></iframe>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScS8vhpvlwYnB5oicgmJkF79hEGQeFQkdhvkxQub0rTcrX_6g/viewform?usp=dialog" width="800" height="900"></iframe>
           </div><!-- End Contact Form -->
 
         </div>
@@ -832,7 +2613,6 @@
     </section><!-- /Contact Section -->
 
   </main>
-
 
 
   <!-- Scroll Top -->
