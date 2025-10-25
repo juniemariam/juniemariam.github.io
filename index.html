@@ -59,9 +59,8 @@
       text-align: center;
     }
 
-    #home h1{
-      font-size: clamp(1.8rem, 8vw, 3.5rem);
-      line-height: 1.1;
+    #home h1 {
+      font-size: 4rem; /* smaller name */
     }
     #home::before {
       content: "";
@@ -76,27 +75,9 @@
     }
 
 
-    #home p{
-    font-size: clamp(1rem, 5.5vw, 2rem);
-    margin-top: 10px;
-  }
-    /* Keep the hero image behaving */
-    #home { position: relative; }
-    #home > img{
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover; /* no cropping surprises */
-      z-index: 0;
-    }
-    #home .container{ position: relative; z-index: 1; }
-    
-    /* Make the badges smaller on small screens */
-    .tag-badge{ font-size: clamp(0.8rem, 2.8vw, 0.95rem); padding: 6px 12px; }
-    
-    /* Tweak spacing on phones */
-    @media (max-width: 576px){
-      #home.hero{ padding: 56px 0; min-height: 65vh; }
-      .ghc-banner{ font-size: 12px; padding: 6px 10px; top: 10px; right: 10px; }
+    #home p {
+      font-size: 3rem;
+      margin-top: 10px;
     }
 
     /* GHC badge */
@@ -162,7 +143,7 @@
     .section.section-alt {
       background: linear-gradient(180deg, #f8fafc 0%, #f5f7fb 100%);
       border-top: 1px solid rgba(0,0,0,.06);
-      border-bottom: 1px solid rgba(0,0,0,.06);
+      /*border-bottom: 1px solid rgba(0,0,0,.06);*/
     }
 
     /* Dark mode friendly */
@@ -170,7 +151,7 @@
       .section.section-alt {
         background: linear-gradient(180deg, #0b1220 0%, #0e1526 100%);
         border-top-color: rgba(255,255,255,.06);
-        border-bottom-color: rgba(255,255,255,.06);
+        /*border-bottom-color: rgba(255,255,255,.06);*/
       }
     }
 
@@ -226,7 +207,7 @@
     }
     #skills-title {
       color: #000;
-      border-bottom: 3px solid #1160d8;
+      /*border-bottom: 3px solid #1160d8;*/
       display: inline-block;
       padding-bottom: 4px;
     }
@@ -234,7 +215,7 @@
     @media (prefers-color-scheme: dark) {
       #skills-title {
         color: #fff;
-        border-bottom-color: #60a5fa; /* lighter blue accent */
+        /*border-bottom-color: #60a5fa; !* lighter blue accent *!*/
       }
     }
     /* Add spacing inside the Skills section */
@@ -249,31 +230,44 @@
         padding: 0 20px;   /* smaller padding for mobile */
       }
     }
-    /* About section spacing & readability */
-    #about .container,
-    #about .section-title {
-      max-width: 1100px;   /* keep content centered like Skills */
-      margin: 0 auto;
-      padding: 0 40px;     /* left-right breathing room */
+    /* ===== About section styling ===== */
+    #about.section {
+      background: #0b1220;     /* dark navy background */
+      color: #ffffff;          /* default text color */
+      padding: 60px 0;
     }
 
-    #about .section-title h2 { margin-bottom: 10px; }
+    /* Keep the layout spacing */
+    #about .container,
+    #about .section-title {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* Title styling */
+    #about .section-title h2 {
+      color: #ffffff;          /* make title white */
+      /*border-bottom: 3px solid #60a5fa;  !* soft blue accent underline *!*/
+      display: inline-block;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+    }
+
+    /* Paragraph text styling */
     #about .section-title p {
       font-size: 1.05rem;
       line-height: 1.8;
-      color: #1f2937;      /* light mode text */
+      color: #d1d5db;          /* light gray for readability */
     }
 
+    /* Mobile tweaks */
     @media (max-width: 768px) {
       #about .container,
       #about .section-title { padding: 0 20px; }
       #about .section-title p { font-size: 1rem; line-height: 1.7; }
     }
 
-    /* Dark mode text color for About */
-    @media (prefers-color-scheme: dark) {
-      #about .section-title p { color: #18191c; }
-    }
 
     /* =========================
    OPEN SOURCE SECTION STYLING
@@ -281,7 +275,7 @@
     #opensource.section-alt {
       background: linear-gradient(180deg, #f8fafc 0%, #f5f7fb 100%);
       border-top: 1px solid rgba(0,0,0,.06);
-      border-bottom: 1px solid rgba(0,0,0,.06);
+      /*border-bottom: 1px solid rgba(0,0,0,.06);*/
       padding: 60px 0;
     }
 
@@ -304,7 +298,7 @@
     }
     #opensource .section-title h2 {
       color: #000;
-      border-bottom: 3px solid #1160d8;
+      /*border-bottom: 3px solid #1160d8;*/
       display: inline-block;
       padding-bottom: 4px;
     }
@@ -381,12 +375,12 @@
       #opensource.section-alt {
         background: linear-gradient(180deg, #0b1220 0%, #0e1526 100%);
         border-top-color: rgba(255,255,255,.06);
-        border-bottom-color: rgba(255,255,255,.06);
+        /*border-bottom-color: rgba(255,255,255,.06);*/
       }
 
       #opensource .section-title h2 {
         color: #fff;
-        border-bottom-color: #60a5fa;
+        /*border-bottom-color: #60a5fa;*/
       }
       #opensource .section-title p {
         color: #d1d5db;
@@ -424,42 +418,99 @@
       color: #0ea5e9;
     }
 
-    /* Add consistent spacing for Professional Affiliations */
-    #professionalAffliations .container {
-      max-width: 1100px;   /* keeps it centered */
-      margin: 0 auto;
-      padding: 0 40px;     /* left & right space */
+
+    /* ===== Professional Affiliations Section (Final Aligned) ===== */
+    #professionalAffliations.section {
+      background: #fff;
+      /*box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);*/
+      /*padding: 60px 0;*/
+      /*margin: 60px auto;         !* centers the section *!*/
+      text-align: center;
     }
 
-    @media (max-width: 768px) {
-      #professionalAffliations .container {
-        padding: 0 20px;   /* smaller padding on mobile */
+    /* Title alignment */
+    #professionalAffliations .section-title {
+      text-align: left;     /* moves the heading to the left */
+      margin-left: 90px;    /* adds a nice offset from the edge */
+      margin-bottom: 30px;  /* consistent spacing below title */
+    }
+    #professionalAffliations .section-title h2 {
+      color: #0f172a;
+      font-weight: 700;
+      font-size: 2rem;
+      display: inline-block;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    /* Grid layout */
+    #professionalAffliations .row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;                 /* even horizontal and vertical spacing */
+      justify-items: center;
+      align-items: start;
+      padding: 0 40px;           /* even horizontal spacing inside */
+    }
+
+    /* Card styling */
+    #professionalAffliations .service-item {
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 320px;
+    }
+
+    /* Logos */
+    #professionalAffliations .service-item img {
+      width: auto;
+      height: 70px;
+      max-width: 100%;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    /* Title text under logo */
+    #professionalAffliations .service-item .title {
+      margin: 0;
+      font-weight: 600;
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      color: #111827;
+      line-height: 1.3;
+    }
+
+    /* Tablet */
+    @media (max-width: 992px) {
+      #professionalAffliations.section {
+        padding: 50px 0;
+        max-width: 95%;
+      }
+      #professionalAffliations .row {
+        gap: 28px;
+        padding: 0 20px;
       }
     }
 
-    /* Optional: add vertical breathing room for section */
-    #professionalAffliations.section {
-      padding-top: 60px;
-      padding-bottom: 60px;
+    /* Mobile */
+    @media (max-width: 576px) {
+      #professionalAffliations.section {
+        padding: 40px 0;
+        margin: 40px auto;
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      #professionalAffliations .row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 16px;
+      }
+      #professionalAffliations .service-item img {
+        height: 60px;
+      }
     }
 
-    /* Align logos and text consistently */
-    #professionalAffliations .title {
-      font-weight: 600;
-      text-align: center;
-      color: #1f2a44;
-    }
-
-    #professionalAffliations img {
-      display: block;
-      margin: 0 auto 12px auto;
-      border-radius: 8px;
-    }
-
-    /* Dark mode tweaks */
-    @media (prefers-color-scheme: dark) {
-      #professionalAffliations .title { color: #18191c; }
-    }
 
     /* Dark background variant */
     .section-dark {
@@ -467,12 +518,12 @@
       color: #fff;
       text-align: left;
       border-top: 1px solid rgba(255,255,255,0.08);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      /*border-bottom: 1px solid rgba(255,255,255,0.08);*/
     }
 
     .section-dark h2 {
       color: #fff;
-      border-bottom: 3px solid #18191c;
+      /*border-bottom: 3px solid #18191c;*/
       display: inline-block;
       padding-bottom: 6px;
       margin-bottom: 16px;
@@ -628,6 +679,88 @@
       }
     }
 
+    /* ===== Education Section ===== */
+    #education.section {
+      background: #fff;
+      padding: 60px 0;
+      border-top: 1px solid rgba(0,0,0,.06);
+      /*border-bottom: 1px solid rgba(0,0,0,.06);*/
+    }
+
+    #education .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Section title */
+    #education .section-title {
+      text-align: left;
+      margin-bottom: 24px;
+    }
+    #education .section-title h2 {
+      display: inline-block;
+      /*border-bottom: 3px solid #1160d8;*/
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+      color: #1f2a44;
+    }
+
+    /* Grid layout */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    /* Card design */
+    .edu-card {
+      background: #f9fafb;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.04);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .edu-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0,0,0,.08);
+    }
+
+    .edu-card h4 {
+      color: #1f2a44;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .edu-card p {
+      margin: 4px 0;
+      font-size: 0.95rem;
+      color: #374151;
+    }
+
+    .edu-duration {
+      font-style: italic;
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+
+    @media (prefers-color-scheme: dark){
+      #education.section {
+        background: #FFFFFF;
+        border-color: rgba(255,255,255,.08);
+      }
+      .edu-card {
+        background: #111827;
+        color: #f3f4f6;
+      }
+      .edu-card p,
+      .edu-card h4 {
+        color: #f3f4f6;
+      }
+      .edu-duration {
+        color: #9ca3af;
+      }
+    }
 
 
   </style>
@@ -663,6 +796,9 @@
     <ul>
       <li><a href="#home" class="active"><i class="bi bi-house navicon"></i> Home</a></li>
       <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+      <!-- 🎓 New Education Section -->
+      <li><a href="#education"><i class="bi bi-mortarboard navicon"></i> Education</a></li>
+
       <!-- <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li> -->
       <li><a href="#skills"><i class="bi bi-tools navicon"></i> Skills</a></li>
       <li><a href="#projects"><i class="bi bi-images navicon"></i> Projects</a></li>
@@ -727,6 +863,43 @@
     </div><!-- End Section Title -->
 
   </section><!-- /About Section -->
+
+  <!-- ===== Education Section ===== -->
+  <section id="education" class="education section section-alt">
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Education</h2>
+      <p>Academic foundation in Software Engineering, Cloud Computing, and Artificial Intelligence.</p>
+    </div>
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="edu-grid">
+
+        <!-- San Jose State University -->
+        <div class="edu-card">
+          <h4>San José State University</h4>
+          <p><strong>Master of Science in Software Engineering</strong></p>
+          <p>Specialization: Cloud Computing and Virtualization</p>
+          <p class="edu-duration">Aug 2024 – May 2026 (Expected)</p>
+        </div>
+
+        <!-- University of Mumbai (AI/ML) -->
+        <div class="edu-card">
+          <h4>University of Mumbai</h4>
+          <p><strong>Master of Science in Artificial Intelligence and Machine Learning</strong></p>
+          <p class="edu-duration">2020 – 2022</p>
+        </div>
+
+        <!-- University of Mumbai (Undergraduate) -->
+        <div class="edu-card">
+          <h4>University of Mumbai</h4>
+          <p><strong>Bachelor of Engineering in Computer Engineering</strong></p>
+          <p class="edu-duration">2016 – 2020</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
 
   <!-- SKILLS -->
   <section id="skills" class="skills section section-alt" aria-labelledby="skills-title">
@@ -1102,10 +1275,11 @@
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
             <div>
-              <img src="assets/img/swe.png" alt="SWE Logo" class="img-fluid" style="width: 100px; height: auto; margin-bottom: 10px;">
-              <h4 class="title">Society of Women Engineers</h4>
+              <img src="assets/img/anitaB.png" alt="AnitaB.org Logo" class="img-fluid" style="width: 120px; height: auto; margin-bottom: 10px;">
+              <h4 class="title">AnitaB.org</h4>
             </div>
-          </div><!-- End Service Item -->
+          </div>
+
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
             <div>
